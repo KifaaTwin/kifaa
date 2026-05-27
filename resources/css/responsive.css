@@ -1,0 +1,714 @@
+/* =========================================================
+   KIFAA RESPONSIVE CSS
+   Mobile / Tablet only
+   This file should be loaded AFTER app.css
+========================================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .k-container,
+    .dashboard-container,
+    .dash-container,
+    .content-wrapper,
+    .about-container,
+    .k-upload-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .k-grid-two,
+    .k-grid-cards,
+    .dashboard-grid,
+    .dash-grid,
+    .stats-grid,
+    .courses-grid,
+    .skills-grid,
+    .features-grid,
+    .cards-grid,
+    .about-showcase,
+    .about-mini-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dash-hero-card {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    /* =========================
+       App sidebar -> bottom nav
+    ========================= */
+
+    .kifaa-sidebar {
+        position: fixed !important;
+        top: auto !important;
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 12px !important;
+        width: calc(100% - 24px) !important;
+        height: 72px !important;
+        border-radius: 28px !important;
+        padding: 8px !important;
+        z-index: 9999 !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: calc(100% - 24px) !important;
+        height: 72px !important;
+    }
+
+    .kifaa-main,
+    .kifaa-sidebar:hover ~ .kifaa-main {
+        margin-inline-start: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-bottom: 110px !important;
+    }
+
+    .kifaa-brand,
+    .kifaa-section-label,
+    .kifaa-user,
+    .kifaa-language,
+    .kifaa-bottom,
+    .kifaa-text,
+    .kifaa-fade {
+        display: none !important;
+    }
+
+    .kifaa-nav {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 0 !important;
+    }
+
+    .kifaa-link {
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        padding: 0 !important;
+        border-radius: 20px !important;
+        justify-content: center !important;
+    }
+
+    .kifaa-link::before {
+        display: none !important;
+    }
+
+    .kifaa-icon {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        border-radius: 16px !important;
+    }
+
+    /* =========================
+       Shared layout
+    ========================= */
+
+    .k-container,
+    .dashboard-container,
+    .dash-container,
+    .content-wrapper,
+    .about-container,
+    .k-upload-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .k-container {
+        padding-top: 28px !important;
+        padding-bottom: 120px !important;
+    }
+
+    .k-section,
+    .k-card,
+    .dash-card,
+    .stat-card,
+    .course-card,
+    .skill-card,
+    .feature-card,
+    .about-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        border-radius: 24px !important;
+    }
+
+    .k-grid-two,
+    .k-grid-cards,
+    .dashboard-grid,
+    .dash-grid,
+    .stats-grid,
+    .courses-grid,
+    .skills-grid,
+    .features-grid,
+    .cards-grid,
+    .about-showcase,
+    .about-mini-grid,
+    .team-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    h1,
+    .k-page-title,
+    .dash-hero-card h1 {
+        font-size: clamp(34px, 10vw, 52px) !important;
+        line-height: 1 !important;
+        letter-spacing: -0.045em !important;
+    }
+
+    h2,
+    .section-title,
+    .k-card-title {
+        font-size: clamp(24px, 8vw, 36px) !important;
+        line-height: 1.1 !important;
+    }
+
+    p,
+    .k-page-subtitle,
+    .k-card-text,
+    .dash-card p,
+    .course-card p,
+    .skill-card p {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    .k-btn-primary,
+    .k-btn-secondary,
+    .k-btn-complete,
+    .k-btn-danger-soft,
+    .auth-submit,
+    button[type="submit"] {
+        width: 100% !important;
+        min-height: 48px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        white-space: normal !important;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+
+    table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    /* =========================
+       Welcome page
+       Do not touch upload-card animation.
+    ========================= */
+
+    .kifaa-logo {
+        top: 16px !important;
+        left: 14px !important;
+        z-index: 80 !important;
+    }
+
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 72px !important;
+        max-width: 72px !important;
+    }
+
+    .kifaa-auth {
+        top: 15px !important;
+        left: 92px !important;
+        right: 8px !important;
+        gap: 5px !important;
+        z-index: 90 !important;
+        justify-content: flex-end !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+    }
+
+    .kifaa-auth::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kifaa-auth a {
+        flex: 0 0 auto !important;
+        padding: 7px 9px !important;
+        font-size: 10.5px !important;
+        border-radius: 999px !important;
+        white-space: nowrap !important;
+    }
+
+    .welcome-theme-toggle {
+        flex: 0 0 auto !important;
+        width: 48px !important;
+        height: 28px !important;
+        padding: 3px !important;
+    }
+
+    .theme-toggle-thumb {
+        width: 20px !important;
+        height: 20px !important;
+        top: 3px !important;
+        left: 4px !important;
+    }
+
+    .theme-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .theme-icon svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(38px, 13vw, 58px) !important;
+        line-height: .92 !important;
+        letter-spacing: -.055em !important;
+        max-width: 90vw !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 84vw !important;
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+    }
+
+    .kifaa-scroll {
+        font-size: 12px !important;
+        letter-spacing: .12em !important;
+    }
+
+    .ai-figure {
+        max-width: 76vw !important;
+        pointer-events: none !important;
+    }
+
+    .twin-energy {
+        max-width: 100vw !important;
+        pointer-events: none !important;
+    }
+
+    /* =========================
+       Auth pages
+    ========================= */
+
+    .auth-page {
+        display: block !important;
+        min-height: 100svh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .auth-visual {
+        display: none !important;
+    }
+
+    .auth-form-side {
+        min-height: 100svh !important;
+        width: 100% !important;
+        padding: 88px 22px 96px !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        overflow-x: hidden !important;
+    }
+
+    .auth-form-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .auth-mobile-logo {
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 34px !important;
+    }
+
+    .auth-mobile-logo img {
+        width: 86px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+    .auth-form-card h1,
+    .auth-form-card h2 {
+        font-size: clamp(40px, 12vw, 54px) !important;
+        line-height: .95 !important;
+        letter-spacing: -0.05em !important;
+    }
+
+    .auth-form-card > p {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+    }
+
+    .auth-form {
+        gap: 18px !important;
+    }
+
+    .auth-field input,
+    .auth-password-wrap input {
+        height: 56px !important;
+        border-radius: 20px !important;
+        font-size: 16px !important;
+    }
+
+    .auth-password-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .auth-password-top a {
+        white-space: nowrap !important;
+        font-size: 13px !important;
+    }
+
+    .auth-remember {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 22px 1fr !important;
+        align-items: center !important;
+        gap: 10px !important;
+        overflow: visible !important;
+    }
+
+    .auth-remember input {
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px !important;
+    }
+
+    .auth-remember label,
+    .auth-remember span {
+        display: block !important;
+        width: 100% !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        font-size: 13px !important;
+        line-height: 1.35 !important;
+    }
+
+    .auth-submit {
+        width: 100% !important;
+        height: 58px !important;
+        border-radius: 22px !important;
+    }
+
+    .auth-link-row {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* =========================
+       CV upload / preview pages
+    ========================= */
+
+    .k-drop-zone {
+        min-height: 240px !important;
+        padding: 22px 16px !important;
+        border-radius: 24px !important;
+    }
+
+    .k-drop-icon {
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 22px !important;
+    }
+
+    .k-drop-title {
+        font-size: 22px !important;
+    }
+
+    .k-file-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .k-file-name {
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    /* =========================
+       Dashboard
+    ========================= */
+
+    .dash-hero-card {
+        min-height: auto !important;
+        grid-template-columns: 1fr !important;
+        padding: 24px !important;
+        border-radius: 30px !important;
+        gap: 20px !important;
+    }
+
+    .dash-main,
+    .dashboard-main {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 16px !important;
+    }
+
+    .dash-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .dash-actions a,
+    .dash-primary,
+    .dash-secondary {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .dash-pill,
+    .dash-user-pill {
+        width: fit-content !important;
+        max-width: 100% !important;
+    }
+
+    /* =========================
+       About / Team
+    ========================= */
+
+    .about-section {
+        padding: 64px 14px 90px !important;
+    }
+
+    .about-heading,
+    .team-heading {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        align-items: start !important;
+    }
+
+    .about-heading h2,
+    .team-heading h2 {
+        font-size: clamp(30px, 9vw, 42px) !important;
+        line-height: 1 !important;
+        letter-spacing: -.04em !important;
+    }
+
+    .about-heading p,
+    .team-heading p {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    .about-showcase {
+        margin-top: 28px !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .about-main-card,
+    .about-mini-card {
+        padding: 20px !important;
+        border-radius: 24px !important;
+        min-height: auto !important;
+    }
+
+    .about-main-card h3 {
+        margin-top: 24px !important;
+        font-size: clamp(28px, 9vw, 38px) !important;
+        line-height: 1 !important;
+    }
+
+    .about-main-card p,
+    .about-mini-card p {
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+    }
+
+    .team-section {
+        margin-top: 64px !important;
+    }
+
+    .team-orbit {
+        margin-top: 28px !important;
+        min-height: auto !important;
+        padding: 18px !important;
+        border-radius: 28px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 14px !important;
+        overflow: visible !important;
+    }
+
+    .team-orbit::before,
+    .team-orbit::after,
+    .team-core {
+        display: none !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 22px !important;
+        padding: 8px !important;
+        transform: none !important;
+    }
+
+    .team-avatar:hover {
+        transform: none !important;
+    }
+
+    .team-avatar img {
+        border-radius: 18px !important;
+    }
+
+    .team-tooltip {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-top: 8px !important;
+        padding: 9px 8px !important;
+        border-radius: 14px !important;
+        white-space: normal !important;
+        font-size: 11px !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 12px !important;
+    }
+
+    .team-tooltip span {
+        font-size: 10.5px !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 430px) {
+    .k-container,
+    .dashboard-container,
+    .dash-container,
+    .content-wrapper,
+    .about-container,
+    .k-upload-panel {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .k-section,
+    .k-card,
+    .dash-card,
+    .stat-card,
+    .course-card,
+    .skill-card,
+    .feature-card,
+    .about-card {
+        padding: 16px !important;
+        border-radius: 22px !important;
+    }
+
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 66px !important;
+        max-width: 66px !important;
+    }
+
+    .kifaa-auth {
+        left: 82px !important;
+        right: 6px !important;
+        gap: 4px !important;
+    }
+
+    .kifaa-auth a {
+        padding: 7px 8px !important;
+        font-size: 10px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 44px !important;
+        height: 27px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(36px, 13.5vw, 54px) !important;
+    }
+
+    .kifaa-link {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+    }
+
+    .kifaa-icon {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+    }
+
+    .team-orbit {
+        grid-template-columns: 1fr !important;
+    }
+
+    .auth-form-side {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        padding-top: 88px !important;
+    }
+}
