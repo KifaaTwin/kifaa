@@ -702,13 +702,106 @@
         min-width: 38px !important;
     }
 
-    .team-orbit {
-        grid-template-columns: 1fr !important;
-    }
-
     .auth-form-side {
         padding-left: 18px !important;
         padding-right: 18px !important;
         padding-top: 88px !important;
+    }
+}
+/* =========================================================
+   MOBILE TUNING — Logo and Team final adjustment
+========================================================= */
+
+@media (max-width: 768px) {
+    /* Bigger welcome logo on mobile */
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 92px !important;
+        max-width: 92px !important;
+    }
+
+    .kifaa-logo {
+        top: 18px !important;
+        left: 16px !important;
+    }
+
+    .kifaa-auth {
+        left: 122px !important;
+        right: 8px !important;
+        top: 18px !important;
+    }
+
+    /* Team should look like neat cards, not huge floating orbit */
+    .team-orbit {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+        padding: 16px !important;
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 100% !important;
+        max-width: 150px !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        margin: 0 auto !important;
+        border-radius: 24px !important;
+    }
+
+    .team-avatar img {
+        border-radius: 20px !important;
+        object-fit: cover !important;
+    }
+
+    .team-tooltip {
+        margin-top: 8px !important;
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    /* Do NOT shrink logo too much on small phones */
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 84px !important;
+        max-width: 84px !important;
+    }
+
+    .kifaa-auth {
+        left: 108px !important;
+        right: 6px !important;
+        gap: 4px !important;
+    }
+
+    .kifaa-auth a {
+        font-size: 9.5px !important;
+        padding: 7px 7px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 42px !important;
+        height: 26px !important;
+    }
+
+    /* Keep team 2 columns even on iPhone unless too tight */
+    .team-orbit {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        max-width: 135px !important;
+        border-radius: 22px !important;
     }
 }
