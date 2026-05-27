@@ -5136,3 +5136,140 @@ html.dark .market-skill-inline-badge,
         display: flex;
     }
 }
+/* =========================================================
+   MOBILE ONLY SAFE FIXES — does not affect desktop or scroll animation
+========================================================= */
+
+@media (max-width: 768px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-logo {
+        top: 18px !important;
+        left: 16px !important;
+        z-index: 50 !important;
+    }
+
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 86px !important;
+        max-width: 86px !important;
+        height: auto !important;
+    }
+
+    .kifaa-auth {
+        top: 18px !important;
+        right: 12px !important;
+        left: 112px !important;
+        z-index: 55 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 6px !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+    }
+
+    .kifaa-auth::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kifaa-auth a {
+        flex: 0 0 auto !important;
+        padding: 8px 11px !important;
+        font-size: 11px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .welcome-theme-toggle {
+        flex: 0 0 auto !important;
+        width: 54px !important;
+        height: 30px !important;
+        padding: 4px !important;
+    }
+
+    .theme-toggle-thumb {
+        width: 22px !important;
+        height: 22px !important;
+        top: 3px !important;
+        left: 4px !important;
+    }
+
+    .theme-icon {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .theme-icon svg {
+        width: 13px !important;
+        height: 13px !important;
+    }
+
+    .kifaa-center {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 18px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(44px, 15vw, 72px) !important;
+        line-height: .9 !important;
+        letter-spacing: -.065em !important;
+        max-width: 92vw !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 86vw !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .kifaa-scroll {
+        font-size: 12px !important;
+        letter-spacing: .12em !important;
+    }
+
+    .ai-figure {
+        max-width: 72vw !important;
+        opacity: .38 !important;
+        pointer-events: none !important;
+    }
+
+    .twin-energy {
+        max-width: 100vw !important;
+        opacity: .55 !important;
+        pointer-events: none !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 80px !important;
+        max-width: 80px !important;
+    }
+
+    .kifaa-auth {
+        left: 102px !important;
+        right: 10px !important;
+        gap: 5px !important;
+    }
+
+    .kifaa-auth a {
+        padding: 8px 9px !important;
+        font-size: 10.5px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(42px, 16vw, 66px) !important;
+    }
+
+    .kifaa-subtitle {
+        font-size: 14px !important;
+    }
+}
