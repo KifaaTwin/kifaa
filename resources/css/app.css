@@ -5734,3 +5734,156 @@ html.dark .market-skill-inline-badge,
         grid-template-columns: 1fr !important;
     }
 }
+/* =========================================================
+   MOBILE FINAL FIX — Auth + Welcome header
+   Mobile only. Desktop untouched.
+========================================================= */
+
+@media (max-width: 768px) {
+    /* Login/Register page: prevent right-side cut */
+    .auth-page,
+    .auth-form-side,
+    .auth-form-card,
+    .auth-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .auth-form-side {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+        align-items: flex-start !important;
+        padding-top: 96px !important;
+    }
+
+    .auth-form-card {
+        max-width: 100% !important;
+    }
+
+    .auth-form-card h1,
+    .auth-form-card h2 {
+        font-size: clamp(42px, 11vw, 58px) !important;
+        line-height: .95 !important;
+    }
+
+    .auth-form-card > p {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+    }
+
+    .auth-field input,
+    .auth-password-wrap input {
+        height: 56px !important;
+        border-radius: 20px !important;
+        font-size: 16px !important;
+    }
+
+    .auth-password-top {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .auth-password-top label,
+    .auth-password-top a {
+        white-space: nowrap !important;
+        font-size: 13px !important;
+    }
+
+    .auth-remember {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        margin-top: 4px !important;
+    }
+
+    .auth-remember span,
+    .auth-remember label {
+        display: inline-block !important;
+        white-space: normal !important;
+        font-size: 13px !important;
+        line-height: 1.35 !important;
+    }
+
+    .auth-submit {
+        margin-top: 8px !important;
+        width: 100% !important;
+        height: 58px !important;
+        border-radius: 22px !important;
+    }
+
+    .auth-link-row {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Welcome header: keep it clean but not too tiny */
+    .kifaa-logo {
+        top: 18px !important;
+        left: 14px !important;
+    }
+
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 72px !important;
+        max-width: 72px !important;
+    }
+
+    .kifaa-auth {
+        top: 17px !important;
+        left: 98px !important;
+        right: 8px !important;
+        gap: 5px !important;
+    }
+
+    .kifaa-auth a {
+        padding: 8px 10px !important;
+        font-size: 10.5px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 48px !important;
+        height: 28px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .auth-form-side {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        padding-top: 88px !important;
+    }
+
+    .auth-form-card h1,
+    .auth-form-card h2 {
+        font-size: clamp(40px, 12vw, 54px) !important;
+    }
+
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 68px !important;
+        max-width: 68px !important;
+    }
+
+    .kifaa-auth {
+        left: 88px !important;
+        right: 6px !important;
+        gap: 4px !important;
+    }
+
+    .kifaa-auth a {
+        padding: 7px 8px !important;
+        font-size: 10px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 44px !important;
+        height: 27px !important;
+    }
+}
