@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     zip \
     unzip \
+    gettext-base \
     libpq-dev \
     libzip-dev \
     libpng-dev \
@@ -33,6 +34,6 @@ COPY docker/start.sh /start.sh
 
 RUN chmod +x /start.sh
 
-EXPOSE 8080
+EXPOSE 10000
 
 CMD ["/start.sh"]
