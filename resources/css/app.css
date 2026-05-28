@@ -5150,3 +5150,24 @@ html.dark .market-skill-inline-badge,
         overflow-x: auto !important;
     }
 }
+
+/* =========================================================
+   DESKTOP SCALE FIX
+   When a laptop/desktop browser is resized, keep the full desktop layout visible
+   by scaling it down instead of switching to mobile layout.
+========================================================= */
+
+@media (max-width: 1180px) and (hover: hover) and (pointer: fine) {
+    html {
+        overflow-x: hidden !important;
+        background: var(--welcome-bg);
+    }
+
+    body {
+        width: 1180px !important;
+        min-width: 1180px !important;
+        transform: scale(calc(100vw / 1180));
+        transform-origin: top left;
+        overflow-x: hidden !important;
+    }
+}
