@@ -1,10 +1,13 @@
 /* =========================================================
    KIFAA RESPONSIVE CSS
    Mobile / Tablet only
-   This file should be loaded AFTER app.css
+   Loaded AFTER app.css
+   Desktop remains untouched
 ========================================================= */
 
-/* Tablet */
+/* =========================
+   Tablet
+========================= */
 @media (max-width: 1024px) {
     html,
     body {
@@ -58,7 +61,9 @@
     }
 }
 
-/* Mobile */
+/* =========================
+   Mobile general
+========================= */
 @media (max-width: 768px) {
     html,
     body {
@@ -67,16 +72,42 @@
         overflow-x: hidden !important;
     }
 
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 16px !important;
+    }
+
+    table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    pre,
+    code {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+    }
+
     /* =========================
        App sidebar -> bottom nav
     ========================= */
-
     .kifaa-sidebar {
         position: fixed !important;
         top: auto !important;
         left: 12px !important;
         right: 12px !important;
-        bottom: 12px !important;
+        bottom: calc(12px + env(safe-area-inset-bottom)) !important;
         width: calc(100% - 24px) !important;
         height: 72px !important;
         border-radius: 28px !important;
@@ -95,7 +126,7 @@
         margin-inline-start: 0 !important;
         margin-left: 0 !important;
         width: 100% !important;
-        padding-bottom: 110px !important;
+        padding-bottom: 116px !important;
     }
 
     .kifaa-brand,
@@ -140,9 +171,8 @@
     }
 
     /* =========================
-       Shared layout
+       Shared containers/cards
     ========================= */
-
     .k-container,
     .dashboard-container,
     .dash-container,
@@ -157,7 +187,7 @@
 
     .k-container {
         padding-top: 28px !important;
-        padding-bottom: 120px !important;
+        padding-bottom: 124px !important;
     }
 
     .k-section,
@@ -229,44 +259,31 @@
         white-space: normal !important;
     }
 
-    input,
-    textarea,
-    select {
-        width: 100% !important;
-        font-size: 16px !important;
-    }
-
-    table {
-        display: block !important;
-        width: 100% !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-    }
-
     /* =========================
-       Welcome page
-       Do not touch upload-card animation.
+       Welcome page header
     ========================= */
-
     .kifaa-logo {
-        top: 16px !important;
-        left: 14px !important;
-        z-index: 80 !important;
+        top: 18px !important;
+        left: 16px !important;
+        z-index: 90 !important;
     }
 
-    .kifaa-logo img,
-    .kifaa-experience .kifaa-logo img {
-        width: 72px !important;
-        max-width: 72px !important;
+    body .kifaa-experience .kifaa-logo img,
+    body .kifaa-logo img {
+        width: 96px !important;
+        max-width: 96px !important;
+        height: auto !important;
     }
 
     .kifaa-auth {
-        top: 15px !important;
-        left: 92px !important;
+        top: 18px !important;
+        left: 126px !important;
         right: 8px !important;
         gap: 5px !important;
-        z-index: 90 !important;
+        z-index: 100 !important;
+        display: flex !important;
         justify-content: flex-end !important;
+        align-items: center !important;
         overflow-x: auto !important;
         scrollbar-width: none !important;
     }
@@ -277,7 +294,7 @@
 
     .kifaa-auth a {
         flex: 0 0 auto !important;
-        padding: 7px 9px !important;
+        padding: 8px 10px !important;
         font-size: 10.5px !important;
         border-radius: 999px !important;
         white-space: nowrap !important;
@@ -335,10 +352,36 @@
         pointer-events: none !important;
     }
 
+    /* The scroll card: keep animation, only fix size/layer on mobile */
+    .upload-card {
+        width: min(88vw, 390px) !important;
+        max-width: 390px !important;
+        padding: 28px 22px !important;
+        border-radius: 32px !important;
+        z-index: 60 !important;
+        pointer-events: auto !important;
+    }
+
+    .upload-card h2 {
+        font-size: clamp(34px, 10vw, 48px) !important;
+        line-height: 1 !important;
+    }
+
+    .upload-card p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .upload-actions a {
+        width: 100% !important;
+        min-height: 54px !important;
+        border-radius: 20px !important;
+        font-size: 15px !important;
+    }
+
     /* =========================
        Auth pages
     ========================= */
-
     .auth-page {
         display: block !important;
         min-height: 100svh !important;
@@ -372,8 +415,9 @@
         margin-bottom: 34px !important;
     }
 
-    .auth-mobile-logo img {
-        width: 86px !important;
+    body .auth-mobile-logo img {
+        width: 110px !important;
+        max-width: 110px !important;
         height: auto !important;
         margin: 0 auto !important;
     }
@@ -453,7 +497,6 @@
     /* =========================
        CV upload / preview pages
     ========================= */
-
     .k-drop-zone {
         min-height: 240px !important;
         padding: 22px 16px !important;
@@ -484,7 +527,6 @@
     /* =========================
        Dashboard
     ========================= */
-
     .dash-hero-card {
         min-height: auto !important;
         grid-template-columns: 1fr !important;
@@ -521,7 +563,6 @@
     /* =========================
        About / Team
     ========================= */
-
     .about-section {
         padding: 64px 14px 90px !important;
     }
@@ -577,14 +618,16 @@
     }
 
     .team-orbit {
-        margin-top: 28px !important;
-        min-height: auto !important;
+        width: 100% !important;
+        max-width: 520px !important;
+        margin: 28px auto 0 !important;
         padding: 18px !important;
-        border-radius: 28px !important;
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 14px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+        min-height: auto !important;
         overflow: visible !important;
+        border-radius: 32px !important;
     }
 
     .team-orbit::before,
@@ -603,11 +646,23 @@
         right: auto !important;
         top: auto !important;
         bottom: auto !important;
+
         width: 100% !important;
+        max-width: 150px !important;
         height: auto !important;
-        aspect-ratio: 1 / 1 !important;
-        border-radius: 22px !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+
+        margin: 0 auto !important;
         padding: 8px !important;
+        border-radius: 26px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        overflow: visible !important;
         transform: none !important;
     }
 
@@ -615,32 +670,56 @@
         transform: none !important;
     }
 
+    .team-avatar::before {
+        opacity: .35 !important;
+        filter: blur(18px) !important;
+    }
+
     .team-avatar img {
-        border-radius: 18px !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        object-fit: cover !important;
+        border-radius: 20px !important;
+
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
     }
 
     .team-tooltip {
         position: static !important;
+        left: auto !important;
+        bottom: auto !important;
         transform: none !important;
+
         width: 100% !important;
         min-width: 0 !important;
-        margin-top: 8px !important;
-        padding: 9px 8px !important;
-        border-radius: 14px !important;
+        margin-top: 10px !important;
+        padding: 10px 8px !important;
+
+        border-radius: 16px !important;
         white-space: normal !important;
-        font-size: 11px !important;
+        text-align: center !important;
+
+        opacity: 1 !important;
+        pointer-events: none !important;
     }
 
     .team-tooltip strong {
         font-size: 12px !important;
+        line-height: 1.2 !important;
     }
 
     .team-tooltip span {
         font-size: 10.5px !important;
+        line-height: 1.25 !important;
     }
 }
 
-/* Small mobile */
+/* =========================
+   Small mobile
+========================= */
 @media (max-width: 430px) {
     .k-container,
     .dashboard-container,
@@ -664,30 +743,40 @@
         border-radius: 22px !important;
     }
 
-    .kifaa-logo img,
-    .kifaa-experience .kifaa-logo img {
-        width: 66px !important;
-        max-width: 66px !important;
+    body .kifaa-experience .kifaa-logo img,
+    body .kifaa-logo img {
+        width: 88px !important;
+        max-width: 88px !important;
     }
 
     .kifaa-auth {
-        left: 82px !important;
+        left: 116px !important;
         right: 6px !important;
         gap: 4px !important;
     }
 
     .kifaa-auth a {
-        padding: 7px 8px !important;
-        font-size: 10px !important;
+        padding: 7px 7px !important;
+        font-size: 9.5px !important;
     }
 
     .welcome-theme-toggle {
-        width: 44px !important;
-        height: 27px !important;
+        width: 42px !important;
+        height: 26px !important;
     }
 
     .kifaa-title {
         font-size: clamp(36px, 13.5vw, 54px) !important;
+    }
+
+    .upload-card {
+        width: min(90vw, 350px) !important;
+        padding: 24px 18px !important;
+        border-radius: 30px !important;
+    }
+
+    .upload-card h2 {
+        font-size: clamp(32px, 10vw, 44px) !important;
     }
 
     .kifaa-link {
@@ -707,38 +796,16 @@
         padding-right: 18px !important;
         padding-top: 88px !important;
     }
-}
-/* =========================================================
-   MOBILE TUNING — Logo and Team final adjustment
-========================================================= */
 
-@media (max-width: 768px) {
-    /* Bigger welcome logo on mobile */
-    .kifaa-logo img,
-    .kifaa-experience .kifaa-logo img {
-        width: 92px !important;
-        max-width: 92px !important;
+    body .auth-mobile-logo img {
+        width: 104px !important;
+        max-width: 104px !important;
     }
 
-    .kifaa-logo {
-        top: 18px !important;
-        left: 16px !important;
-    }
-
-    .kifaa-auth {
-        left: 122px !important;
-        right: 8px !important;
-        top: 18px !important;
-    }
-
-    /* Team should look like neat cards, not huge floating orbit */
     .team-orbit {
-        display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 14px !important;
-        padding: 16px !important;
-        min-height: auto !important;
-        overflow: visible !important;
+        padding: 14px !important;
     }
 
     .team-avatar,
@@ -746,54 +813,34 @@
     .team-avatar.t2,
     .team-avatar.t3,
     .team-avatar.t4 {
-        width: 100% !important;
-        max-width: 150px !important;
-        height: auto !important;
-        aspect-ratio: 1 / 1 !important;
-        margin: 0 auto !important;
-        border-radius: 24px !important;
-    }
-
-    .team-avatar img {
-        border-radius: 20px !important;
-        object-fit: cover !important;
-    }
-
-    .team-tooltip {
-        margin-top: 8px !important;
-        font-size: 11px !important;
-        line-height: 1.35 !important;
+        max-width: 132px !important;
+        padding: 7px !important;
     }
 }
 
-@media (max-width: 430px) {
-    /* Do NOT shrink logo too much on small phones */
-    .kifaa-logo img,
-    .kifaa-experience .kifaa-logo img {
-        width: 84px !important;
-        max-width: 84px !important;
+/* Very small phones */
+@media (max-width: 380px) {
+    .kifaa-auth {
+        left: 104px !important;
     }
 
-    .kifaa-auth {
-        left: 108px !important;
-        right: 6px !important;
-        gap: 4px !important;
+    body .kifaa-experience .kifaa-logo img,
+    body .kifaa-logo img {
+        width: 80px !important;
+        max-width: 80px !important;
     }
 
     .kifaa-auth a {
-        font-size: 9.5px !important;
-        padding: 7px 7px !important;
+        padding: 6px 6px !important;
+        font-size: 9px !important;
     }
 
     .welcome-theme-toggle {
-        width: 42px !important;
-        height: 26px !important;
+        width: 39px !important;
     }
 
-    /* Keep team 2 columns even on iPhone unless too tight */
     .team-orbit {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 12px !important;
+        grid-template-columns: 1fr !important;
     }
 
     .team-avatar,
@@ -801,7 +848,6 @@
     .team-avatar.t2,
     .team-avatar.t3,
     .team-avatar.t4 {
-        max-width: 135px !important;
-        border-radius: 22px !important;
+        max-width: 170px !important;
     }
 }
