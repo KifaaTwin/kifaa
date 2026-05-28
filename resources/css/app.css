@@ -4247,7 +4247,6 @@ html.dark .auth-page .auth-core.auth-twin-visual img,
 /* =========================================================
    11. Responsive rules and animations
 ========================================================= */
-
 @media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 .auth-hero h1,
 .auth-hero h2 {
@@ -4261,7 +4260,6 @@ right: 34px;
         height: 250px;
 }
 }
-
 @media (max-width: 900px) and (hover: none) and (pointer: coarse) {
 body {
 overflow: auto;
@@ -4291,7 +4289,6 @@ display: flex;
 font-size: 44px;
 }
 }
-
 @media (max-width: 950px) and (hover: none) and (pointer: coarse) {
 .about-heading,
 .about-showcase,
@@ -4315,7 +4312,6 @@ margin-top: 0;
 padding: 95px 22px;
 }
 }
-
 @media (max-width: 850px) and (hover: none) and (pointer: coarse) {
 .kifaa-logo {
 left: 20px;
@@ -4335,7 +4331,6 @@ width: 240px;
 font-size: clamp(48px, 15vw, 72px);
 }
 }
-
 @media (max-width: 1100px) and (hover: none) and (pointer: coarse) {
 .k-grid-two,
 .k-dashboard-grid,
@@ -4348,7 +4343,6 @@ grid-template-columns: 1fr;
 grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 }
-
 @media (max-width: 720px) and (hover: none) and (pointer: coarse) {
 .k-container {
 padding: 28px 18px;
@@ -4379,7 +4373,6 @@ width: 100%;
 width: 100%;
 }
 }
-
 @media (max-width: 900px) and (hover: none) and (pointer: coarse) {
 .k-settings-shell {
 grid-template-columns: 1fr;
@@ -4391,7 +4384,6 @@ display: flex;
         flex-wrap: wrap;
 }
 }
-
 @media (max-width: 950px) and (hover: none) and (pointer: coarse) {
 .about-heading,
 .about-showcase,
@@ -4451,7 +4443,6 @@ left: 22px;
 transform: translateY(0);
 }
 }
-
 @media (max-width: 850px) and (hover: none) and (pointer: coarse) {
 .kifaa-logo {
 left: 20px;
@@ -4548,13 +4539,11 @@ from {
         transform: rotate(360deg);
     }
 }
-
 @media (max-width: 1050px) and (hover: none) and (pointer: coarse) {
 .dash-hero-card {
 grid-template-columns: 1fr;
 }
 }
-
 @media (max-width: 650px) and (hover: none) and (pointer: coarse) {
 .dash-hero-card {
 padding: 26px;
@@ -5011,13 +5000,11 @@ html.dark .dash-twin-overlay strong {
 html.dark .dash-twin-overlay span {
     color: rgba(255, 255, 255, .66);
 }
-
 @media (max-width: 1050px) and (hover: none) and (pointer: coarse) {
     .dash-hero-card {
         grid-template-columns: 1fr;
     }
 }
-
 @media (max-width: 650px) and (hover: none) and (pointer: coarse) {
     .dash-hero-card {
         padding: 26px;
@@ -5137,37 +5124,1710 @@ html.dark .market-skill-inline-badge,
     }
 }
 
+
+
+
 /* =========================================================
-   DESKTOP STABLE WIDTH
-   Keeps desktop layout from collapsing when the browser window is resized.
+   DESKTOP RESIZE ZOOM
+   Keeps desktop layout visible when the laptop browser window is narrowed.
+   Uses zoom instead of transform so Welcome scroll animation is less likely to break.
    Mobile/tablet touch devices are not affected.
 ========================================================= */
-
-@media (hover: hover) and (pointer: fine) {
-    html,
-    body {
-        min-width: 1180px !important;
-        overflow-x: auto !important;
-    }
-}
-
-/* =========================================================
-   DESKTOP SCALE FIX
-   When a laptop/desktop browser is resized, keep the full desktop layout visible
-   by scaling it down instead of switching to mobile layout.
-========================================================= */
-
 @media (max-width: 1180px) and (hover: hover) and (pointer: fine) {
     html {
         overflow-x: hidden !important;
-        background: var(--welcome-bg);
+        background: var(--welcome-bg) !important;
     }
 
     body {
         width: 1180px !important;
         min-width: 1180px !important;
-        transform: scale(calc(100vw / 1180));
-        transform-origin: top left;
         overflow-x: hidden !important;
+        zoom: calc(100vw / 1180);
+    }
+}
+
+/* =========================================================
+   DESKTOP RESIZE STABILITY
+   Desktop stays normal on large screens.
+   If browser is narrower than desktop layout, horizontal scroll appears.
+   No zoom. No transform.
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+    html {
+        overflow-x: auto !important;
+    }
+
+    body {
+        width: auto !important;
+        min-width: 1180px !important;
+        overflow-x: visible !important;
+        transform: none !important;
+        zoom: normal !important;
+    }
+}
+
+/* =========================================================
+   DESKTOP NARROW WINDOW FIX
+   Keeps Welcome visual sizes stable on laptop when browser is narrowed.
+   No zoom. No transform. Horizontal scroll remains available.
+========================================================= */
+
+@media (max-width: 1180px) and (hover: hover) and (pointer: fine) {
+    .kifaa-experience,
+    .kifaa-stage {
+        min-width: 1180px !important;
+    }
+
+    .ai-figure {
+        width: 440px !important;
+        max-width: 440px !important;
+    }
+
+    .twin-energy {
+        width: 900px !important;
+        height: 420px !important;
+        max-width: 900px !important;
+    }
+
+    .kifaa-title {
+        font-size: 99px !important;
+        max-width: 1060px !important;
+        line-height: .86 !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 640px !important;
+        font-size: 17px !important;
+    }
+
+    .upload-card {
+        width: 540px !important;
+        max-width: 540px !important;
+    }
+}
+
+/* =========================================================
+   KIFAA TOUCH RESPONSIVE SYSTEM
+   Mobile / iPad / tablet only.
+   Does not affect laptop or desktop resize.
+========================================================= */
+
+/* Tablet + iPad touch */
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    html,
+    body {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        transform: none !important;
+        zoom: normal !important;
+    }
+
+    .k-container,
+    .about-container,
+    .dashboard-container,
+    .dash-container,
+    .content-wrapper,
+    .k-upload-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .k-grid-two,
+    .k-dashboard-grid,
+    .k-skills-layout,
+    .about-heading,
+    .about-showcase,
+    .team-heading {
+        grid-template-columns: 1fr !important;
+    }
+
+    .k-stat-grid,
+    .k-course-grid,
+    .k-simulation-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .dash-hero-card {
+        grid-template-columns: 1fr !important;
+        padding: 32px !important;
+        border-radius: 34px !important;
+    }
+
+    .dash-twin-visual {
+        min-height: 280px !important;
+    }
+
+    .auth-page {
+        grid-template-columns: 1fr !important;
+        min-height: 100svh !important;
+    }
+
+    .auth-visual {
+        display: none !important;
+    }
+
+    .auth-form-side {
+        min-height: 100svh !important;
+        padding: 44px 28px !important;
+        place-items: start center !important;
+    }
+
+    .auth-form-card {
+        width: 100% !important;
+        max-width: 560px !important;
+        margin: 0 auto !important;
+    }
+
+    .auth-mobile-logo {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 34px !important;
+    }
+
+    .auth-mobile-logo img,
+    .auth-app-logo-img {
+        width: 150px !important;
+        max-width: 150px !important;
+        height: auto !important;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .team-card:nth-child(1),
+    .team-card:nth-child(2),
+    .team-card:nth-child(3),
+    .team-card:nth-child(4) {
+        margin-top: 0 !important;
+    }
+
+    .team-orbit {
+        min-height: auto !important;
+        padding: 24px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+
+    .team-orbit::before,
+    .team-orbit::after {
+        display: none !important;
+    }
+
+    .team-core,
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        position: relative !important;
+        inset: auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    .team-core {
+        grid-column: 1 / -1 !important;
+    }
+
+    .team-avatar {
+        height: 190px !important;
+    }
+}
+
+/* Mobile touch */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    html,
+    body {
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-experience {
+        min-height: 330svh !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-stage {
+        position: sticky !important;
+        top: 0 !important;
+        height: 100svh !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        display: grid !important;
+        place-items: center !important;
+    }
+
+    .kifaa-logo {
+        top: 18px !important;
+        left: 18px !important;
+        z-index: 80 !important;
+    }
+
+    .kifaa-experience .kifaa-logo img,
+    .kifaa-logo img {
+        width: 88px !important;
+        max-width: 88px !important;
+        height: auto !important;
+    }
+
+    .kifaa-auth {
+        top: 18px !important;
+        right: 12px !important;
+        left: 112px !important;
+        z-index: 90 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 6px !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+    }
+
+    .kifaa-auth::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kifaa-auth a {
+        flex: 0 0 auto !important;
+        padding: 8px 11px !important;
+        font-size: 11px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .welcome-theme-toggle {
+        flex: 0 0 auto !important;
+        width: 50px !important;
+        height: 28px !important;
+        padding: 3px !important;
+    }
+
+    .theme-toggle-thumb {
+        width: 20px !important;
+        height: 20px !important;
+        top: 3px !important;
+        left: 4px !important;
+    }
+
+    .theme-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .theme-icon svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .kifaa-center {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 18px !important;
+        text-align: center !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(42px, 14vw, 68px) !important;
+        line-height: .92 !important;
+        letter-spacing: -.058em !important;
+        max-width: 92vw !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 86vw !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .kifaa-scroll {
+        font-size: 12px !important;
+        letter-spacing: .12em !important;
+    }
+
+    .ai-figure {
+        width: 82vw !important;
+        max-width: none !important;
+        pointer-events: none !important;
+    }
+
+    .twin-energy {
+        width: 96vw !important;
+        height: 54vw !important;
+        max-width: 100vw !important;
+        pointer-events: none !important;
+    }
+
+    .upload-card {
+        width: min(90vw, 390px) !important;
+        max-width: 390px !important;
+        padding: 30px 22px !important;
+        border-radius: 34px !important;
+        z-index: 80 !important;
+        pointer-events: auto !important;
+    }
+
+    .upload-card h2 {
+        font-size: clamp(34px, 10vw, 48px) !important;
+        line-height: 1 !important;
+    }
+
+    .upload-card p {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    .upload-actions a {
+        width: 100% !important;
+        min-height: 56px !important;
+        border-radius: 22px !important;
+    }
+
+    .about-section {
+        padding: 84px 20px 100px !important;
+    }
+
+    .about-heading h2,
+    .team-heading h2 {
+        font-size: clamp(38px, 11vw, 56px) !important;
+        line-height: .96 !important;
+    }
+
+    .about-heading p,
+    .team-heading p {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+
+    .about-showcase,
+    .about-mini-grid,
+    .team-heading {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-main-card,
+    .about-mini-card,
+    .team-card {
+        padding: 24px !important;
+        border-radius: 28px !important;
+    }
+
+    .team-orbit {
+        grid-template-columns: 1fr !important;
+        border-radius: 34px !important;
+    }
+
+    .team-avatar {
+        height: 170px !important;
+    }
+
+    .team-tooltip {
+        left: 16px !important;
+        right: 16px !important;
+        bottom: 14px !important;
+        width: auto !important;
+        min-width: 0 !important;
+        transform: none !important;
+    }
+
+    .auth-form-side {
+        padding: 42px 24px !important;
+    }
+
+    .auth-form-card {
+        max-width: 100% !important;
+    }
+
+    .auth-mobile-logo img,
+    .auth-app-logo-img {
+        width: 142px !important;
+        max-width: 142px !important;
+    }
+
+    .auth-form-card h1,
+    .auth-form-card h2 {
+        font-size: clamp(42px, 11vw, 62px) !important;
+        line-height: .95 !important;
+    }
+
+    .auth-form-card > p {
+        font-size: 16px !important;
+        line-height: 1.65 !important;
+    }
+
+    .auth-field input,
+    .auth-password-wrap input {
+        height: 60px !important;
+        border-radius: 20px !important;
+        font-size: 16px !important;
+    }
+
+    .auth-submit {
+        height: 62px !important;
+        border-radius: 22px !important;
+        font-size: 16px !important;
+    }
+
+    .kifaa-sidebar {
+        top: auto !important;
+        left: 14px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        width: auto !important;
+        height: 66px !important;
+        border-radius: 26px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: auto !important;
+    }
+
+    .kifaa-main {
+        margin-inline-start: 0 !important;
+        padding-bottom: 92px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .kifaa-brand,
+    .kifaa-user,
+    .kifaa-bottom,
+    .kifaa-section-label,
+    .kifaa-text {
+        display: none !important;
+    }
+
+    .kifaa-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .kifaa-link {
+        width: 48px !important;
+        height: 48px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        border-radius: 18px !important;
+    }
+
+    .k-container {
+        padding: 30px 18px !important;
+    }
+
+    .k-section {
+        padding: 24px !important;
+        border-radius: 28px !important;
+    }
+
+    .k-page-title {
+        font-size: clamp(36px, 10vw, 54px) !important;
+    }
+
+    .k-page-subtitle {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    .k-stat-grid,
+    .k-course-grid,
+    .k-simulation-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .k-skill-row,
+    .k-action-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .k-skill-actions,
+    .k-skill-actions > *,
+    .k-action-row > * {
+        width: 100% !important;
+    }
+
+    .dash-hero-card {
+        padding: 26px !important;
+        border-radius: 30px !important;
+    }
+
+    .dash-hero-card h1 {
+        font-size: clamp(40px, 12vw, 62px) !important;
+        line-height: .92 !important;
+    }
+
+    .dash-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .dash-primary,
+    .dash-secondary {
+        width: 100% !important;
+    }
+
+    .dash-twin-visual {
+        height: 260px !important;
+    }
+}
+
+/* Small mobile touch */
+@media (max-width: 430px) and (hover: none) and (pointer: coarse) {
+    .kifaa-logo img,
+    .kifaa-experience .kifaa-logo img {
+        width: 82px !important;
+        max-width: 82px !important;
+    }
+
+    .kifaa-auth {
+        left: 104px !important;
+        right: 8px !important;
+        gap: 5px !important;
+    }
+
+    .kifaa-auth a {
+        padding: 8px 9px !important;
+        font-size: 10.5px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 46px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(40px, 15vw, 62px) !important;
+    }
+
+    .auth-form-side {
+        padding: 38px 20px !important;
+    }
+
+    .auth-mobile-logo img,
+    .auth-app-logo-img {
+        width: 136px !important;
+        max-width: 136px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE NAV FINAL FIX
+   Makes app sidebar a complete horizontal bottom dock on phones.
+   Does not affect desktop/laptop.
+========================================================= */
+
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    .kifaa-sidebar {
+        position: fixed !important;
+        top: auto !important;
+        left: 12px !important;
+        right: 12px !important;
+        bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+        width: auto !important;
+        height: 76px !important;
+        min-height: 76px !important;
+        max-height: 76px !important;
+        border-radius: 28px !important;
+        z-index: 9999 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 8px !important;
+        padding: 10px 12px !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+
+        background: rgba(255, 255, 255, 0.84) !important;
+        border: 1px solid rgba(255, 255, 255, 0.96) !important;
+        box-shadow: 0 18px 50px rgba(41, 41, 102, 0.16) !important;
+        backdrop-filter: blur(22px) !important;
+        -webkit-backdrop-filter: blur(22px) !important;
+    }
+
+    .kifaa-sidebar::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: auto !important;
+        box-shadow: 0 18px 50px rgba(41, 41, 102, 0.16) !important;
+    }
+
+    .kifaa-sidebar:hover ~ .kifaa-main {
+        margin-inline-start: 0 !important;
+    }
+
+    .kifaa-main {
+        margin-inline-start: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-bottom: 108px !important;
+    }
+
+    .kifaa-brand {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 auto !important;
+        width: 52px !important;
+        height: 52px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .kifaa-sidebar-logo {
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        border-radius: 20px !important;
+    }
+
+    .kifaa-sidebar-logo img {
+        width: 38px !important;
+        height: 38px !important;
+        object-fit: contain !important;
+    }
+
+    .kifaa-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        width: auto !important;
+        padding: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .kifaa-bottom {
+        position: static !important;
+        inset: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        max-width: 52px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 20px !important;
+        flex: 0 0 52px !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-bottom .kifaa-user {
+        background: rgba(237, 233, 254, 0.88) !important;
+        border: 1px solid rgba(109, 40, 217, 0.10) !important;
+        text-decoration: none !important;
+    }
+
+    .kifaa-bottom .kifaa-logout-form {
+        display: flex !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .kifaa-icon,
+    .kifaa-avatar {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        border-radius: 14px !important;
+        display: grid !important;
+        place-items: center !important;
+    }
+
+    .kifaa-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .kifaa-text,
+    .kifaa-fade,
+    .kifaa-brand-title,
+    .kifaa-brand-subtitle,
+    .kifaa-user-name,
+    .kifaa-user-subtitle,
+    .kifaa-section-label,
+    .kifaa-language {
+        display: none !important;
+    }
+
+    .kifaa-link::before {
+        display: none !important;
+    }
+
+    .kifaa-link.active {
+        background: rgba(255, 255, 255, 0.96) !important;
+        border: 1px solid rgba(109, 40, 217, 0.14) !important;
+        box-shadow: 0 12px 28px rgba(109, 40, 217, 0.14) !important;
+    }
+
+    .kifaa-logout {
+        background: #fff1f2 !important;
+        border: 1px solid rgba(225, 29, 72, 0.12) !important;
+    }
+}
+
+/* Extra compact phones */
+@media (max-width: 390px) and (hover: none) and (pointer: coarse) {
+    .kifaa-sidebar {
+        left: 10px !important;
+        right: 10px !important;
+        height: 72px !important;
+        min-height: 72px !important;
+        padding: 9px 10px !important;
+        gap: 7px !important;
+    }
+
+    .kifaa-brand,
+    .kifaa-sidebar-logo,
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        max-width: 50px !important;
+        flex-basis: 50px !important;
+    }
+}
+
+/* Dark mode mobile dock */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    html.dark .kifaa-sidebar {
+        background: rgba(21, 21, 34, 0.88) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.30) !important;
+    }
+
+    html.dark .kifaa-link.active {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(167, 139, 250, 0.24) !important;
+    }
+
+    html.dark .kifaa-bottom .kifaa-user {
+        background: rgba(109, 40, 217, 0.18) !important;
+        border-color: rgba(167, 139, 250, 0.18) !important;
+    }
+}
+
+/* =========================================================
+   KIFAA MOBILE / TABLET NAV POLISH
+   Cleaner navigation for phones, tablets, and iPad only.
+========================================================= */
+
+/* Phones: clean floating bottom dock */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    .kifaa-sidebar {
+        left: 18px !important;
+        right: 18px !important;
+        bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+        height: 66px !important;
+        min-height: 66px !important;
+        max-height: 66px !important;
+        padding: 8px 10px !important;
+        border-radius: 26px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+
+        background:
+            radial-gradient(circle at 18% 20%, rgba(167, 139, 250, .22), transparent 36%),
+            radial-gradient(circle at 88% 80%, rgba(255, 247, 205, .45), transparent 40%),
+            rgba(255, 255, 255, .86) !important;
+
+        border: 1px solid rgba(255, 255, 255, .96) !important;
+        box-shadow:
+            0 18px 48px rgba(41, 41, 102, .14),
+            inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+    }
+
+    .kifaa-sidebar::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: auto !important;
+    }
+
+    .kifaa-sidebar:hover ~ .kifaa-main {
+        margin-inline-start: 0 !important;
+    }
+
+    .kifaa-main {
+        padding-bottom: 98px !important;
+    }
+
+    .kifaa-brand,
+    .kifaa-nav,
+    .kifaa-bottom {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .kifaa-brand {
+        width: 46px !important;
+        height: 46px !important;
+        flex-basis: 46px !important;
+    }
+
+    .kifaa-sidebar-logo,
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px !important;
+        max-width: 46px !important;
+        flex: 0 0 46px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 18px !important;
+
+        display: grid !important;
+        place-items: center !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-sidebar-logo {
+        background:
+            radial-gradient(circle at 30% 20%, rgba(255,255,255,.38), transparent 38%),
+            linear-gradient(135deg, #6D28D9, #A78BFA) !important;
+        box-shadow: 0 12px 26px rgba(109, 40, 217, .22) !important;
+    }
+
+    .kifaa-sidebar-logo img {
+        width: 33px !important;
+        height: 33px !important;
+        object-fit: contain !important;
+    }
+
+    .kifaa-link {
+        background: rgba(255,255,255,.48) !important;
+        border: 1px solid rgba(109, 40, 217, .07) !important;
+        color: #6D28D9 !important;
+        box-shadow: none !important;
+    }
+
+    .kifaa-link.active {
+        background: rgba(109, 40, 217, .12) !important;
+        border: 1px solid rgba(109, 40, 217, .16) !important;
+        box-shadow: 0 10px 24px rgba(109, 40, 217, .14) !important;
+    }
+
+    .kifaa-link.active .kifaa-icon {
+        color: white !important;
+        background: linear-gradient(135deg, #6D28D9, #A78BFA) !important;
+        box-shadow: 0 8px 18px rgba(109, 40, 217, .22) !important;
+    }
+
+    .kifaa-icon,
+    .kifaa-avatar {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        border-radius: 12px !important;
+        display: grid !important;
+        place-items: center !important;
+        background: transparent !important;
+    }
+
+    .kifaa-icon svg {
+        width: 17px !important;
+        height: 17px !important;
+    }
+
+    .kifaa-bottom .kifaa-user {
+        background: rgba(237, 233, 254, .72) !important;
+        border: 1px solid rgba(109, 40, 217, .10) !important;
+    }
+
+    .kifaa-avatar {
+        background: rgba(109, 40, 217, .12) !important;
+        color: #6D28D9 !important;
+        font-size: 12px !important;
+        font-weight: 950 !important;
+    }
+
+    .kifaa-logout {
+        background: rgba(255, 241, 242, .78) !important;
+        border: 1px solid rgba(225, 29, 72, .12) !important;
+        color: #E11D48 !important;
+    }
+
+    .kifaa-logout .kifaa-icon {
+        background: transparent !important;
+        color: #E11D48 !important;
+    }
+
+    .kifaa-text,
+    .kifaa-fade,
+    .kifaa-brand-title,
+    .kifaa-brand-subtitle,
+    .kifaa-user-name,
+    .kifaa-user-subtitle,
+    .kifaa-section-label,
+    .kifaa-language {
+        display: none !important;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 390px) and (hover: none) and (pointer: coarse) {
+    .kifaa-sidebar {
+        left: 12px !important;
+        right: 12px !important;
+        height: 62px !important;
+        min-height: 62px !important;
+        max-height: 62px !important;
+        padding: 7px 8px !important;
+        gap: 7px !important;
+        border-radius: 24px !important;
+    }
+
+    .kifaa-brand,
+    .kifaa-sidebar-logo,
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        width: 43px !important;
+        height: 43px !important;
+        min-width: 43px !important;
+        max-width: 43px !important;
+        flex-basis: 43px !important;
+        border-radius: 16px !important;
+    }
+
+    .kifaa-sidebar-logo img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .kifaa-icon,
+    .kifaa-avatar {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+    }
+
+    .kifaa-icon svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+/* iPad / tablets: keep elegant side rail instead of bottom dock */
+@media (min-width: 769px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    .kifaa-sidebar {
+        position: fixed !important;
+        top: 18px !important;
+        bottom: 18px !important;
+        left: 18px !important;
+        right: auto !important;
+
+        width: 68px !important;
+        min-width: 68px !important;
+        height: auto !important;
+        border-radius: 30px !important;
+
+        padding: 12px 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        overflow: hidden !important;
+        background: rgba(255,255,255,.86) !important;
+        border: 1px solid rgba(255,255,255,.96) !important;
+        box-shadow: 0 20px 60px rgba(41,41,102,.12) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: 68px !important;
+    }
+
+    .kifaa-main {
+        margin-inline-start: 86px !important;
+        padding-bottom: 0 !important;
+        width: auto !important;
+    }
+
+    .kifaa-sidebar:hover ~ .kifaa-main {
+        margin-inline-start: 86px !important;
+    }
+
+    .kifaa-brand {
+        display: flex !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        margin: 0 0 22px !important;
+    }
+
+    .kifaa-sidebar-logo {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        border-radius: 20px !important;
+    }
+
+    .kifaa-sidebar-logo img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .kifaa-nav {
+        display: grid !important;
+        gap: 10px !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .kifaa-bottom {
+        position: absolute !important;
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 12px !important;
+        display: grid !important;
+        gap: 10px !important;
+    }
+
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        max-width: 50px !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        border-radius: 20px !important;
+        justify-content: center !important;
+    }
+
+    .kifaa-text,
+    .kifaa-fade,
+    .kifaa-brand-title,
+    .kifaa-brand-subtitle,
+    .kifaa-user-name,
+    .kifaa-user-subtitle,
+    .kifaa-section-label,
+    .kifaa-language {
+        display: none !important;
+    }
+}
+
+/* Dark mode polish for touch nav */
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    html.dark .kifaa-sidebar {
+        background: rgba(21, 21, 34, .88) !important;
+        border-color: rgba(255,255,255,.12) !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,.34) !important;
+    }
+
+    html.dark .kifaa-link {
+        background: rgba(255,255,255,.06) !important;
+        border-color: rgba(255,255,255,.08) !important;
+    }
+
+    html.dark .kifaa-link.active {
+        background: rgba(109,40,217,.22) !important;
+        border-color: rgba(167,139,250,.24) !important;
+    }
+}
+
+/* =========================================================
+   KIFAA MOBILE / TABLET HAMBURGER NAV
+   Phones and tablets use a clean off-canvas menu.
+   Desktop sidebar remains unchanged.
+========================================================= */
+
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    .kifaa-mobile-menu-btn {
+        position: fixed !important;
+        top: calc(18px + env(safe-area-inset-top)) !important;
+        left: 18px !important;
+        z-index: 100000 !important;
+
+        width: 48px !important;
+        height: 48px !important;
+        border: 1px solid rgba(255, 255, 255, .92) !important;
+        border-radius: 18px !important;
+
+        display: grid !important;
+        place-items: center !important;
+        gap: 4px !important;
+
+        background: rgba(255, 255, 255, .86) !important;
+        box-shadow: 0 16px 42px rgba(41, 41, 102, .14) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+
+    .kifaa-mobile-menu-btn span {
+        display: block !important;
+        width: 20px !important;
+        height: 2px !important;
+        border-radius: 999px !important;
+        background: #292966 !important;
+        transition: transform .25s ease, opacity .25s ease;
+    }
+
+    html.kifaa-menu-open .kifaa-mobile-menu-btn span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg) !important;
+    }
+
+    html.kifaa-menu-open .kifaa-mobile-menu-btn span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    html.kifaa-menu-open .kifaa-mobile-menu-btn span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg) !important;
+    }
+
+    .kifaa-mobile-menu-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 99980 !important;
+        background: rgba(15, 15, 30, .28) !important;
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity .25s ease !important;
+    }
+
+    html.kifaa-menu-open .kifaa-mobile-menu-overlay {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    .kifaa-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: auto !important;
+
+        width: min(82vw, 310px) !important;
+        height: 100svh !important;
+        min-height: 100svh !important;
+
+        z-index: 99990 !important;
+        border-radius: 0 34px 34px 0 !important;
+
+        padding: 86px 18px 22px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        background:
+            radial-gradient(circle at 20% 0%, rgba(167, 139, 250, .24), transparent 34%),
+            radial-gradient(circle at 90% 100%, rgba(255, 247, 205, .38), transparent 34%),
+            rgba(255, 255, 255, .92) !important;
+
+        border: 1px solid rgba(255, 255, 255, .96) !important;
+        box-shadow: 26px 0 80px rgba(41, 41, 102, .18) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+
+        transform: translateX(-106%) !important;
+        transition: transform .32s cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    html.kifaa-menu-open .kifaa-sidebar {
+        transform: translateX(0) !important;
+    }
+
+    .kifaa-sidebar:hover {
+        width: min(82vw, 310px) !important;
+        box-shadow: 26px 0 80px rgba(41, 41, 102, .18) !important;
+    }
+
+    .kifaa-sidebar:hover ~ .kifaa-main {
+        margin-inline-start: 0 !important;
+    }
+
+    .kifaa-main {
+        margin-inline-start: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-top: 72px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .kifaa-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        white-space: normal !important;
+    }
+
+    .kifaa-sidebar-logo {
+        width: 54px !important;
+        height: 54px !important;
+        min-width: 54px !important;
+        border-radius: 20px !important;
+    }
+
+    .kifaa-sidebar-logo img {
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: contain !important;
+    }
+
+    .kifaa-brand-title,
+    .kifaa-brand-subtitle {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .kifaa-brand-title {
+        font-size: 20px !important;
+        color: #18181b !important;
+    }
+
+    .kifaa-brand-subtitle {
+        font-size: 12px !important;
+        color: #8b8ba5 !important;
+    }
+
+    .kifaa-section-label {
+        display: block !important;
+        opacity: 1 !important;
+        margin: 8px 4px 0 !important;
+        color: #a1a1aa !important;
+    }
+
+    .kifaa-nav,
+    .kifaa-bottom {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .kifaa-link,
+    .kifaa-logout,
+    .kifaa-bottom .kifaa-user {
+        width: 100% !important;
+        height: 54px !important;
+        min-height: 54px !important;
+        max-width: none !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+
+        padding: 0 12px !important;
+        margin: 0 !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-icon,
+    .kifaa-avatar {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        border-radius: 14px !important;
+    }
+
+    .kifaa-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .kifaa-text,
+    .kifaa-fade,
+    .kifaa-user-name,
+    .kifaa-user-subtitle {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .kifaa-text {
+        font-size: 15px !important;
+        font-weight: 900 !important;
+    }
+
+    .kifaa-bottom .kifaa-logout-form {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .kifaa-language {
+        display: none !important;
+    }
+}
+
+/* Dark mode drawer */
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    html.dark .kifaa-mobile-menu-btn {
+        background: rgba(21, 21, 34, .88) !important;
+        border-color: rgba(255, 255, 255, .12) !important;
+        box-shadow: 0 16px 42px rgba(0, 0, 0, .30) !important;
+    }
+
+    html.dark .kifaa-mobile-menu-btn span {
+        background: #f8fafc !important;
+    }
+
+    html.dark .kifaa-sidebar {
+        background:
+            radial-gradient(circle at 20% 0%, rgba(187, 142, 208, .20), transparent 34%),
+            radial-gradient(circle at 90% 100%, rgba(167, 139, 250, .12), transparent 34%),
+            rgba(21, 21, 34, .94) !important;
+        border-color: rgba(255, 255, 255, .12) !important;
+        box-shadow: 26px 0 80px rgba(0, 0, 0, .34) !important;
+    }
+
+    html.dark .kifaa-brand-title,
+    html.dark .kifaa-text,
+    html.dark .kifaa-user-name {
+        color: #ffffff !important;
+    }
+
+    html.dark .kifaa-brand-subtitle,
+    html.dark .kifaa-user-subtitle {
+        color: rgba(255, 255, 255, .58) !important;
+    }
+}
+
+/* =========================================================
+   KIFAA MOBILE WELCOME CLEAN TIMELINE
+   Touch devices only:
+   1) Hero with two heads
+   2) Heads open and fade
+   3) Build your Digital Twin appears
+   4) Build card fades before About
+========================================================= */
+
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    .kifaa-experience {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 260svh !important;
+        min-height: 260svh !important;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-stage {
+        position: sticky !important;
+        top: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 100svh !important;
+        overflow: hidden !important;
+        display: grid !important;
+        place-items: center !important;
+        padding: 0 !important;
+    }
+
+    .kifaa-center {
+        position: relative !important;
+        z-index: 20 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 18px !important;
+        text-align: center !important;
+        opacity: 1 !important;
+        transform: none !important;
+        will-change: opacity, transform !important;
+    }
+
+    .kifaa-title {
+        max-width: 92vw !important;
+        margin-inline: auto !important;
+        font-size: clamp(40px, 12vw, 58px) !important;
+        line-height: .92 !important;
+        letter-spacing: -.055em !important;
+        text-align: center !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 86vw !important;
+        margin: 18px auto 0 !important;
+        font-size: 14.5px !important;
+        line-height: 1.6 !important;
+    }
+
+    .kifaa-scroll {
+        margin-top: 24px !important;
+        font-size: 11px !important;
+        letter-spacing: .13em !important;
+    }
+
+    .twins-layer {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100svh !important;
+        overflow: hidden !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+    }
+
+    .ai-figure {
+        position: absolute !important;
+        top: 57% !important;
+        width: min(74vw, 360px) !important;
+        max-width: none !important;
+        opacity: .68 !important;
+        pointer-events: none !important;
+        will-change: transform, opacity !important;
+    }
+
+    .ai-left {
+        left: 50% !important;
+        transform: translate(-70%, -50%) rotate(-3deg) scale(1);
+    }
+
+    .ai-right {
+        right: 50% !important;
+        transform: translate(70%, -50%) rotate(3deg) scale(1);
+    }
+
+    .twin-energy {
+        width: 90vw !important;
+        max-width: 100vw !important;
+        height: 50vw !important;
+        opacity: .58 !important;
+        pointer-events: none !important;
+        will-change: opacity, transform !important;
+    }
+
+    .upload-card {
+        position: absolute !important;
+        left: 50% !important;
+        top: 55% !important;
+        z-index: 40 !important;
+
+        width: min(90vw, 410px) !important;
+        max-width: 410px !important;
+        margin: 0 !important;
+        padding: 30px 22px !important;
+        border-radius: 34px !important;
+        text-align: center !important;
+
+        /* Fallback: visible if JS fails. JS immediately controls this on load. */
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+        will-change: opacity, transform !important;
+    }
+
+    .upload-card h2 {
+        font-size: clamp(34px, 9vw, 48px) !important;
+        line-height: 1 !important;
+        letter-spacing: -.045em !important;
+    }
+
+    .upload-card p {
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+    }
+
+    .upload-actions a {
+        width: 100% !important;
+        min-height: 56px !important;
+        border-radius: 22px !important;
+    }
+
+    .about-section {
+        margin-top: 0 !important;
+        padding-top: 100px !important;
+    }
+}
+
+@media (max-width: 430px) and (hover: none) and (pointer: coarse) {
+    .kifaa-title {
+        font-size: clamp(38px, 12vw, 54px) !important;
+    }
+
+    .ai-figure {
+        width: min(76vw, 330px) !important;
+        top: 58% !important;
+    }
+
+    .upload-card {
+        width: min(90vw, 390px) !important;
+        top: 56% !important;
+        padding: 28px 22px !important;
+    }
+}
+
+/* =========================================================
+   KIFAA MOBILE WELCOME CARD SECTION FIX
+   First screen shows hero only. Build card starts after scrolling.
+========================================================= */
+
+@media (max-width: 1024px) {
+    .kifaa-experience {
+        min-height: auto !important;
+        height: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-stage {
+        position: relative !important;
+        top: auto !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 0 !important;
+    }
+
+    .kifaa-center {
+        min-height: 112svh !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 115px 18px 80px !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .twins-layer {
+        position: absolute !important;
+        inset: 0 !important;
+        height: 100svh !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .ai-figure {
+        width: min(76vw, 360px) !important;
+        top: 58% !important;
+        opacity: .62 !important;
+    }
+
+    .upload-card {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        width: min(90vw, 410px) !important;
+        max-width: 410px !important;
+
+        /* أهم تعديل: الكرت يبدأ بعد أول شاشة، مو ظاهر من البداية */
+        margin: 38px auto 110px !important;
+
+        padding: 30px 22px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        z-index: 20 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .kifaa-center {
+        min-height: 118svh !important;
+        padding-top: 110px !important;
+        padding-bottom: 90px !important;
+    }
+
+    .upload-card {
+        margin-top: 46px !important;
+        margin-bottom: 115px !important;
     }
 }
