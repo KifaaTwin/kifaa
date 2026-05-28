@@ -64,7 +64,7 @@
 /* =========================
    Mobile general
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
     html,
     body {
         width: 100%;
@@ -261,8 +261,8 @@
 
     /* =========================
        Welcome page mobile animation
-       Keep original scroll effect:
-       heads open first, then Build your Digital Twin card appears.
+       Smooth scroll: heads open first, then Build your Digital Twin card appears.
+       Important: do not force opacity/transform/position on upload-card.
     ========================= */
     .kifaa-experience {
         min-height: 330vh !important;
@@ -276,6 +276,17 @@
         overflow: hidden !important;
         display: grid !important;
         place-items: center !important;
+    }
+
+    .kifaa-center {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 18px !important;
+        text-align: center !important;
+    }
+
+    .twins-layer {
+        pointer-events: none !important;
     }
 
     .kifaa-logo {
@@ -671,7 +682,7 @@
         bottom: auto !important;
 
         width: 100% !important;
-        max-width: 150px !important;
+        max-width: 170px !important;
         height: auto !important;
         min-height: 0 !important;
         aspect-ratio: auto !important;
@@ -743,7 +754,7 @@
 /* =========================
    Small mobile
 ========================= */
-@media (max-width: 430px) {
+@media (max-width: 430px) and (hover: none) and (pointer: coarse) {
     .k-container,
     .dashboard-container,
     .dash-container,
@@ -836,13 +847,13 @@
     .team-avatar.t2,
     .team-avatar.t3,
     .team-avatar.t4 {
-        max-width: 132px !important;
+        max-width: 145px !important;
         padding: 7px !important;
     }
 }
 
 /* Very small phones */
-@media (max-width: 380px) {
+@media (max-width: 380px) and (hover: none) and (pointer: coarse) {
     .kifaa-auth {
         left: 104px !important;
     }
@@ -863,8 +874,8 @@
     }
 
     body .auth-mobile-logo img {
-        width: 145px !important;
-        max-width: 145px !important;
+        width: 158px !important;
+        max-width: 158px !important;
     }
 
     .team-orbit {
@@ -877,5 +888,125 @@
     .team-avatar.t3,
     .team-avatar.t4 {
         max-width: 170px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP / RESIZED LAPTOP WINDOWS
+   Applies when laptop browser is narrow.
+   Does NOT affect real mobile touch devices.
+========================================================= */
+
+@media (max-width: 900px) and (hover: hover) and (pointer: fine) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .kifaa-experience {
+        min-height: 330vh !important;
+    }
+
+    .kifaa-stage {
+        position: sticky !important;
+        top: 0 !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-logo {
+        top: 28px !important;
+        left: 32px !important;
+    }
+
+    body .kifaa-experience .kifaa-logo img,
+    body .kifaa-logo img {
+        width: 122px !important;
+        max-width: 122px !important;
+        height: auto !important;
+    }
+
+    .kifaa-auth {
+        top: 30px !important;
+        right: 32px !important;
+        left: auto !important;
+        gap: 10px !important;
+        overflow: visible !important;
+    }
+
+    .kifaa-auth a {
+        font-size: 13px !important;
+        padding: 12px 18px !important;
+    }
+
+    .welcome-theme-toggle {
+        width: 66px !important;
+        height: 38px !important;
+    }
+
+    .kifaa-title {
+        font-size: clamp(64px, 9vw, 120px) !important;
+        line-height: .86 !important;
+        max-width: 780px !important;
+    }
+
+    .kifaa-subtitle {
+        max-width: 540px !important;
+        font-size: 18px !important;
+        line-height: 1.65 !important;
+    }
+
+    .upload-card {
+        width: min(560px, 78vw) !important;
+        max-width: 560px !important;
+        padding: 46px 40px !important;
+        border-radius: 42px !important;
+    }
+
+    .upload-card h2 {
+        font-size: clamp(48px, 6vw, 76px) !important;
+        line-height: .95 !important;
+    }
+
+    .upload-card p {
+        font-size: 18px !important;
+        line-height: 1.65 !important;
+    }
+
+    .ai-figure {
+        max-width: 42vw !important;
+    }
+
+    .auth-page {
+        min-height: 100vh !important;
+    }
+
+    .auth-form-side {
+        padding: 70px 56px !important;
+    }
+
+    body .auth-mobile-logo img {
+        width: 160px !important;
+        max-width: 160px !important;
+    }
+
+    .auth-form-card {
+        max-width: 560px !important;
+        margin: 0 auto !important;
+    }
+
+    .k-container,
+    .dashboard-container,
+    .dash-container,
+    .content-wrapper,
+    .about-container,
+    .k-upload-panel {
+        max-width: 860px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
     }
 }
