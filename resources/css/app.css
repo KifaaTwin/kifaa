@@ -5136,3 +5136,17 @@ html.dark .market-skill-inline-badge,
         display: flex;
     }
 }
+
+/* =========================================================
+   DESKTOP STABLE WIDTH
+   Keeps desktop layout from collapsing when the browser window is resized.
+   Mobile/tablet touch devices are not affected.
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+        min-width: 1180px !important;
+        overflow-x: auto !important;
+    }
+}
