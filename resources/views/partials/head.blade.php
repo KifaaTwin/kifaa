@@ -57,8 +57,7 @@
 
 <link rel="preconnect" href="https://fonts.bunny.net">
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-@fluxAppearance
+@vite(['resources/css/app.css', 'resources/js/app.js'])@fluxAppearance
 
 <script>
     function getStoredKifaaTheme() {
