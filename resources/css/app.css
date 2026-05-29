@@ -6831,3 +6831,720 @@ html.dark .market-skill-inline-badge,
         margin-bottom: 115px !important;
     }
 }
+
+/* =========================================================
+   KIFAA MOBILE APP DRAWER - RESTORED GOOD VERSION
+========================================================= */
+
+@media (min-width: 1101px) {
+    .kifaa-mobile-toggle,
+    .kifaa-mobile-screen {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .kifaa-sidebar,
+    .kifaa-mobile-menu-btn,
+    .kifaa-mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .kifaa-main {
+        margin-inline-start: 0 !important;
+        padding-top: 48px !important;
+    }
+
+    .kifaa-mobile-toggle {
+        position: fixed !important;
+        top: 14px !important;
+        left: 14px !important;
+        z-index: 2147483647 !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 16px !important;
+        background: rgba(255,255,255,.94) !important;
+        border: 1px solid rgba(41,41,102,.08) !important;
+        box-shadow: 0 14px 34px rgba(41,41,102,.12) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+        padding: 0 !important;
+        transform: none !important;
+        cursor: pointer !important;
+    }
+
+    .kifaa-mobile-toggle span {
+        position: absolute !important;
+        left: 11px !important;
+        width: 22px !important;
+        height: 2.4px !important;
+        border-radius: 999px !important;
+        background: #292966 !important;
+        transition: .24s ease !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(1) { top: 14px !important; }
+    .kifaa-mobile-toggle span:nth-child(2) { top: 22px !important; }
+    .kifaa-mobile-toggle span:nth-child(3) { top: 30px !important; }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(1) {
+        top: 22px !important;
+        transform: rotate(45deg) !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(3) {
+        top: 22px !important;
+        transform: rotate(-45deg) !important;
+    }
+
+    .kifaa-mobile-screen {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 1000000 !important;
+        pointer-events: none !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-screen {
+        pointer-events: auto !important;
+    }
+
+    .kifaa-mobile-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        background: rgba(20,18,32,.46) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        transition: .28s ease !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-backdrop {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .kifaa-mobile-drawer {
+        position: fixed !important;
+        top: 10px !important;
+        left: 10px !important;
+        z-index: 1000002 !important;
+        width: min(88vw, 340px) !important;
+        height: calc(100dvh - 20px) !important;
+        max-height: calc(100dvh - 20px) !important;
+        padding: 68px 20px 20px !important;
+        border-radius: 32px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        transform: translate3d(calc(-100% - 28px), 0, 0) !important;
+        transition: transform .34s cubic-bezier(.2,.8,.2,1) !important;
+        background:
+            radial-gradient(circle at 28% 0%, rgba(187,142,208,.24), transparent 34%),
+            radial-gradient(circle at 88% 100%, rgba(255,247,205,.58), transparent 34%),
+            rgba(255,255,255,.97) !important;
+        border: 1px solid rgba(255,255,255,.96) !important;
+        box-shadow: 0 34px 100px rgba(41,41,102,.24) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-drawer {
+        transform: translate3d(0,0,0) !important;
+    }
+
+    .kifaa-mobile-head {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        margin-bottom: 26px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .kifaa-mobile-logo-wrap {
+        width: 56px !important;
+        height: 56px !important;
+        border-radius: 22px !important;
+        display: grid !important;
+        place-items: center !important;
+        background: linear-gradient(135deg,#7c3aed,#a78bfa) !important;
+        box-shadow: 0 18px 36px rgba(109,40,217,.22) !important;
+        overflow: hidden !important;
+    }
+
+    .kifaa-mobile-logo {
+        width: 42px !important;
+        height: 42px !important;
+        object-fit: contain !important;
+    }
+
+    .kifaa-mobile-title {
+        font-size: 22px !important;
+        font-weight: 950 !important;
+        line-height: 1 !important;
+        color: #111827 !important;
+    }
+
+    .kifaa-mobile-subtitle {
+        margin-top: 5px !important;
+        font-size: 12px !important;
+        font-weight: 850 !important;
+        color: rgba(41,41,102,.62) !important;
+    }
+
+    .kifaa-mobile-list {
+        display: grid !important;
+        gap: 12px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .kifaa-mobile-footer {
+        margin-top: auto !important;
+        padding-top: 24px !important;
+        display: grid !important;
+        gap: 12px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .kifaa-mobile-item,
+    .kifaa-mobile-account,
+    .kifaa-mobile-logout {
+        width: 100% !important;
+        height: 60px !important;
+        min-height: 60px !important;
+        border-radius: 22px !important;
+        padding: 10px 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 13px !important;
+        text-decoration: none !important;
+        color: #6d28d9 !important;
+        font-size: 15px !important;
+        font-weight: 950 !important;
+        background: rgba(255,255,255,.84) !important;
+        border: 1px solid rgba(41,41,102,.08) !important;
+        box-shadow: 0 14px 34px rgba(41,41,102,.045) !important;
+    }
+
+    .kifaa-mobile-item.is-active {
+        background: rgba(237,233,254,.98) !important;
+        border-color: rgba(109,40,217,.26) !important;
+        box-shadow: 0 18px 40px rgba(109,40,217,.12) !important;
+    }
+
+    .kifaa-mobile-icon,
+    .kifaa-mobile-avatar,
+    .kifaa-mobile-logout span {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        border-radius: 16px !important;
+        display: grid !important;
+        place-items: center !important;
+    }
+
+    .kifaa-mobile-icon,
+    .kifaa-mobile-avatar {
+        background: linear-gradient(135deg,#7c3aed,#a78bfa) !important;
+        color: white !important;
+    }
+
+    .kifaa-mobile-account strong {
+        display: block !important;
+        font-size: 14px !important;
+        color: #111827 !important;
+    }
+
+    .kifaa-mobile-account small {
+        display: block !important;
+        margin-top: 3px !important;
+        font-size: 11px !important;
+        color: rgba(41,41,102,.55) !important;
+    }
+
+    .kifaa-mobile-logout-form {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .kifaa-mobile-logout {
+        color: #be123c !important;
+        background: #fff1f2 !important;
+        border-color: rgba(225,29,72,.20) !important;
+        cursor: pointer !important;
+        font-family: inherit !important;
+    }
+
+    .kifaa-mobile-logout span {
+        background: rgba(225,29,72,.08) !important;
+        color: #be123c !important;
+    }
+
+    html.kifaa-mobile-open,
+    html.kifaa-mobile-open body {
+        overflow: hidden !important;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+    .kifaa-mobile-drawer {
+        width: 410px !important;
+        height: calc(100dvh - 28px) !important;
+        max-height: calc(100dvh - 28px) !important;
+        top: 14px !important;
+        left: 14px !important;
+        padding: 82px 30px 30px !important;
+        border-radius: 38px !important;
+    }
+
+    .kifaa-mobile-item,
+    .kifaa-mobile-account,
+    .kifaa-mobile-logout {
+        height: 64px !important;
+        min-height: 64px !important;
+        border-radius: 24px !important;
+    }
+}
+
+
+
+/* KIFAA MOBILE ICONS RESTORE */
+@media (max-width: 1100px) {
+    .kifaa-mobile-drawer {
+        background:
+            radial-gradient(circle at 28% 0%, rgba(187,142,208,.24), transparent 34%),
+            radial-gradient(circle at 88% 100%, rgba(255,247,205,.58), transparent 34%),
+            rgba(255,255,255,.97) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+    }
+
+    .kifaa-mobile-icon,
+    .kifaa-mobile-avatar,
+    .kifaa-mobile-logout span {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        border-radius: 16px !important;
+    }
+
+    .kifaa-mobile-icon svg {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .kifaa-mobile-item,
+    .kifaa-mobile-account,
+    .kifaa-mobile-logout {
+        height: 60px !important;
+        min-height: 60px !important;
+        border-radius: 22px !important;
+        padding: 10px 14px !important;
+    }
+
+    .kifaa-mobile-footer {
+        margin-top: auto !important;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+    .kifaa-mobile-icon,
+    .kifaa-mobile-avatar,
+    .kifaa-mobile-logout span {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        border-radius: 17px !important;
+    }
+
+    .kifaa-mobile-item,
+    .kifaa-mobile-account,
+    .kifaa-mobile-logout {
+        height: 64px !important;
+        min-height: 64px !important;
+        border-radius: 24px !important;
+    }
+}
+
+/* KIFAA MOBILE MENU ICON FIXED ONLY */
+@media (max-width: 1100px) {
+    body > .kifaa-mobile-toggle {
+        position: fixed !important;
+        top: 14px !important;
+        left: 14px !important;
+        right: auto !important;
+        bottom: auto !important;
+        z-index: 2147483647 !important;
+        transform: none !important;
+        translate: none !important;
+    }
+}
+
+@media (max-width: 380px) {
+    body > .kifaa-mobile-toggle {
+        top: 12px !important;
+        left: 12px !important;
+    }
+}
+
+/* Dashboard mobile hero title fix */
+@media (max-width: 1100px) {
+    .dash-hero-card h1,
+    .dashboard-hero h1,
+    .dash-hero h1 {
+        font-size: clamp(38px, 10vw, 54px) !important;
+        line-height: .9 !important;
+        letter-spacing: -0.06em !important;
+        max-width: 92% !important;
+    }
+
+    .dash-hero-card,
+    .dashboard-hero,
+    .dash-hero {
+        padding-top: 42px !important;
+        overflow: hidden !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .dash-hero-card h1,
+    .dashboard-hero h1,
+    .dash-hero h1 {
+        font-size: clamp(34px, 9.5vw, 46px) !important;
+        line-height: .92 !important;
+    }
+
+    .dash-hero-card,
+    .dashboard-hero,
+    .dash-hero {
+        padding-top: 46px !important;
+    }
+}
+
+/* Dashboard mobile visual score badge fix only */
+@media (max-width: 640px) {
+    .dash-twin-visual {
+        min-height: 245px !important;
+        padding: 18px 14px !important;
+    }
+
+    .dash-twin-center {
+        transform: scale(.82) !important;
+        transform-origin: center !important;
+    }
+
+    .dash-twin-overlay {
+        width: 112px !important;
+        min-height: 78px !important;
+        padding: 12px 10px !important;
+        border-radius: 18px !important;
+    }
+
+    .dash-twin-overlay .k-number {
+        font-size: 36px !important;
+        line-height: .9 !important;
+        letter-spacing: -0.04em !important;
+    }
+
+    .dash-twin-overlay span {
+        font-size: 10px !important;
+        margin-top: 4px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .dash-twin-center {
+        transform: scale(.76) !important;
+    }
+
+    .dash-twin-overlay {
+        width: 104px !important;
+        min-height: 72px !important;
+        padding: 10px 9px !important;
+        border-radius: 16px !important;
+    }
+
+    .dash-twin-overlay .k-number {
+        font-size: 32px !important;
+    }
+
+    .dash-twin-overlay span {
+        font-size: 9px !important;
+    }
+}
+
+/* Dashboard hero mobile final balance */
+@media (max-width: 640px) {
+    .dash-hero-card {
+        padding: 34px 22px 26px !important;
+        border-radius: 34px !important;
+        gap: 20px !important;
+    }
+
+    .dash-hero-top {
+        margin-bottom: 14px !important;
+    }
+
+    .dash-pill {
+        transform: scale(.82) !important;
+        transform-origin: left center !important;
+        margin-bottom: 14px !important;
+    }
+
+    .dash-hero-card h1 {
+        font-size: clamp(34px, 9.2vw, 44px) !important;
+        line-height: .92 !important;
+        letter-spacing: -0.055em !important;
+        max-width: 95% !important;
+        margin: 0 0 18px !important;
+    }
+
+    .dash-hero-card h1 span {
+        font-size: inherit !important;
+        line-height: inherit !important;
+    }
+
+    .dash-hero-card p {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+        max-width: 95% !important;
+        margin-bottom: 22px !important;
+    }
+
+    .dash-hero-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .dash-hero-actions .k-primary-btn,
+    .dash-hero-actions .k-secondary-btn {
+        width: 100% !important;
+        min-height: 54px !important;
+        border-radius: 18px !important;
+        font-size: 15px !important;
+    }
+
+    .dash-twin-visual {
+        min-height: 270px !important;
+        padding: 20px 16px !important;
+        border-radius: 30px !important;
+    }
+
+    .dash-twin-center {
+        transform: scale(.86) !important;
+        transform-origin: center !important;
+    }
+
+    .dash-twin-overlay {
+        width: 108px !important;
+        min-height: 74px !important;
+        padding: 10px 9px !important;
+        border-radius: 17px !important;
+    }
+
+    .dash-twin-overlay .k-number {
+        font-size: 34px !important;
+        line-height: .9 !important;
+    }
+
+    .dash-twin-overlay span {
+        font-size: 9px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .dash-hero-card {
+        padding: 32px 20px 24px !important;
+    }
+
+    .dash-hero-card h1 {
+        font-size: clamp(31px, 8.8vw, 39px) !important;
+    }
+
+    .dash-hero-card p {
+        font-size: 14px !important;
+    }
+
+    .dash-twin-visual {
+        min-height: 245px !important;
+    }
+
+    .dash-twin-center {
+        transform: scale(.78) !important;
+    }
+
+    .dash-twin-overlay {
+        width: 98px !important;
+        min-height: 68px !important;
+    }
+
+    .dash-twin-overlay .k-number {
+        font-size: 30px !important;
+    }
+}
+
+/* Force dashboard center readiness badge smaller on mobile */
+@media (max-width: 640px) {
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay {
+        width: 82px !important;
+        height: 58px !important;
+        min-height: 58px !important;
+        padding: 7px 8px !important;
+        border-radius: 14px !important;
+        transform: translate(-50%, -50%) scale(.78) !important;
+        transform-origin: center !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay .k-number {
+        font-size: 25px !important;
+        line-height: .85 !important;
+        letter-spacing: -0.04em !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay span {
+        font-size: 7px !important;
+        line-height: 1 !important;
+        margin-top: 2px !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay {
+        width: 92px !important;
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 8px 9px !important;
+        border-radius: 15px !important;
+        transform: translate(-50%, -50%) scale(.82) !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay .k-number {
+        font-size: 29px !important;
+        line-height: .85 !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay span {
+        font-size: 8px !important;
+    }
+}
+
+/* Balance dashboard center readiness badge size on mobile */
+@media (max-width: 640px) {
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay {
+        width: 96px !important;
+        height: 68px !important;
+        min-height: 68px !important;
+        padding: 9px 10px !important;
+        border-radius: 16px !important;
+        transform: translate(-50%, -50%) scale(.9) !important;
+        transform-origin: center !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay .k-number {
+        font-size: 32px !important;
+        line-height: .88 !important;
+        letter-spacing: -0.04em !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay span {
+        font-size: 8.5px !important;
+        line-height: 1 !important;
+        margin-top: 3px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay {
+        width: 92px !important;
+        height: 64px !important;
+        min-height: 64px !important;
+        transform: translate(-50%, -50%) scale(.88) !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay .k-number {
+        font-size: 30px !important;
+    }
+
+    .dash-hero-card .dash-twin-visual .dash-twin-center .dash-twin-overlay span {
+        font-size: 8px !important;
+    }
+}
+
+/* Mobile hamburger icon spacing polish only */
+@media (max-width: 1100px) {
+    .kifaa-mobile-toggle {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 15px !important;
+    }
+
+    .kifaa-mobile-toggle span {
+        left: 12px !important;
+        width: 18px !important;
+        height: 2.2px !important;
+        border-radius: 999px !important;
+        background: #292966 !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(1) {
+        top: 14px !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(2) {
+        top: 21px !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(3) {
+        top: 28px !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(1) {
+        top: 21px !important;
+        transform: rotate(45deg) !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(3) {
+        top: 21px !important;
+        transform: rotate(-45deg) !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .kifaa-mobile-toggle {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .kifaa-mobile-toggle span {
+        left: 11px !important;
+        width: 18px !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(1) {
+        top: 13px !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(2) {
+        top: 20px !important;
+    }
+
+    .kifaa-mobile-toggle span:nth-child(3) {
+        top: 27px !important;
+    }
+
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(1),
+    html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(3) {
+        top: 20px !important;
+    }
+}
