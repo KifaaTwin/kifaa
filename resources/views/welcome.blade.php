@@ -227,7 +227,7 @@
                 <article class="team-avatar js-team-avatar t4" data-hue="45">
                     <img src="{{ asset('images/team/shahad.png') }}" alt="Shahad Mosalam Alqurashi">
                     <div class="team-tooltip">
-                        <strong>Shahad Mosalam Alqurashi</strong>
+                        <strong>Shahad Musallam Alqurashi</strong>
                     </div>
                 </article>
             </div>

@@ -1,8 +1,11 @@
 function applyKefaaTheme(mode = null) {
     const selectedMode = mode || localStorage.getItem('kefaa-theme') || 'light';
+
     document.documentElement.classList.remove('dark');
 
-    if (selectedMode === 'dark') document.documentElement.classList.add('dark');
+    if (selectedMode === 'dark') {
+        document.documentElement.classList.add('dark');
+    }
 
     if (selectedMode === 'system') {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -31,8 +34,15 @@ function initKifaaMobileNav() {
     }));
 
     const userName = sidebar.querySelector('.kifaa-user .kifaa-text')?.textContent?.trim() || 'Account';
+
+    const accountHref =
+        sidebar.querySelector('a.kifaa-user')?.getAttribute('href') ||
+        sidebar.querySelector('a[href*="profile"]')?.getAttribute('href') ||
+        sidebar.querySelector('a[href*="account"]')?.getAttribute('href') ||
+        sidebar.querySelector('a[href*="settings"]')?.getAttribute('href') ||
+        '/profile';
+
     const logoutForm = sidebar.querySelector('.kifaa-logout-form');
-    const csrf = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
 
     const toggle = document.createElement('button');
     toggle.type = 'button';
@@ -65,21 +75,24 @@ function initKifaaMobileNav() {
             </div>
 
             <div class="kifaa-mobile-footer">
-                <div class="kifaa-mobile-account">
+                <a class="kifaa-mobile-account" href="${accountHref}">
                     <span class="kifaa-mobile-avatar">${userName.charAt(0).toUpperCase()}</span>
                     <span>
                         <strong>${userName}</strong>
                         <small>Account settings</small>
                     </span>
-                </div>
+                </a>
 
-                <form class="kifaa-mobile-logout-form" action="${logoutForm?.getAttribute('action') || '/logout'}" method="${logoutForm?.getAttribute('method') || 'POST'}">
-                    ${csrf ? `<input type="hidden" name="_token" value="${csrf}">` : ''}
-                    <button type="submit" class="kifaa-mobile-logout">
-                        <span>↪</span>
-                        <strong>Log Out</strong>
-                    </button>
-                </form>
+                <button type="button" class="kifaa-mobile-logout">
+                    <span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                            <path d="M15 17l5-5-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 12H9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M11 5H6.5A2.5 2.5 0 004 7.5v9A2.5 2.5 0 006.5 19H11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <strong>Log Out</strong>
+                </button>
             </div>
         </aside>
     `;
@@ -95,7 +108,18 @@ function initKifaaMobileNav() {
     });
 
     screen.querySelector('.kifaa-mobile-backdrop')?.addEventListener('click', closeMenu);
-    screen.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+    screen.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    screen.querySelector('.kifaa-mobile-logout')?.addEventListener('click', () => {
+        if (logoutForm) {
+            logoutForm.requestSubmit ? logoutForm.requestSubmit() : logoutForm.submit();
+        } else {
+            window.location.href = '/logout';
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -108,36 +132,3 @@ document.addEventListener('livewire:navigated', () => {
     document.documentElement.classList.remove('kifaa-mobile-open');
     initKifaaMobileNav();
 });
-
-window.matchMedia('(max-width: 640px)').matches;
-
-/* KIFAA mobile welcome card appears after twin heads disappear */
-function initKifaaMobileUploadCardAfterHeads() {
-    const card = document.querySelector('#uploadCard, .upload-card');
-    const twinEnergy = document.querySelector('#twinEnergy, .twins-layer');
-
-    if (!card || !twinEnergy) return;
-
-    const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
-
-    const update = () => {
-        if (!isMobile()) {
-            card.classList.remove('kifaa-upload-card-ready');
-            return;
-        }
-
-        const opacity = parseFloat(getComputedStyle(twinEnergy).opacity || '1');
-        const rect = twinEnergy.getBoundingClientRect();
-        const headsGone = opacity < 0.35 || rect.bottom < window.innerHeight * 0.55;
-
-        card.classList.toggle('kifaa-upload-card-ready', headsGone);
-    };
-
-    update();
-
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-}
-
-document.addEventListener('DOMContentLoaded', initKifaaMobileUploadCardAfterHeads);
-document.addEventListener('livewire:navigated', initKifaaMobileUploadCardAfterHeads);
