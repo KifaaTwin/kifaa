@@ -4717,7 +4717,7 @@ a {
         line-height: 1.15;
         width: fit-content;
     }
-    
+
     .dash-hello-line {
         display: block;
         color: var(--k-logo-yellow);
@@ -4725,7 +4725,7 @@ a {
         font-weight: 950;
         line-height: 1.1;
     }
-    
+
     .dash-active-line {
         display: inline-flex;
         align-items: center;
@@ -4735,7 +4735,7 @@ a {
         font-weight: 850;
         line-height: 1.1;
     }
-    
+
     .dash-active-dot {
         width: 7px;
         height: 7px;
@@ -7546,5 +7546,1333 @@ html.dark .market-skill-inline-badge,
     html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(1),
     html.kifaa-mobile-open .kifaa-mobile-toggle span:nth-child(3) {
         top: 20px !important;
+    }
+}
+/* =========================================================
+   TEAM PHONE EXACT BREAKPOINTS - ENLARGED AVATARS + NAMES
+   Specific fixes for each common phone width
+========================================================= */
+
+/* Base phone style */
+@media (max-width: 640px) {
+    .team-section {
+        margin-top: 90px !important;
+    }
+
+    .team-heading {
+        display: block !important;
+    }
+
+    .team-heading h2 {
+        max-width: 100% !important;
+        font-size: clamp(40px, 11vw, 56px) !important;
+        line-height: .92 !important;
+        letter-spacing: -.055em !important;
+    }
+
+    .team-heading p {
+        margin-top: 18px !important;
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    .team-orbit {
+        position: relative !important;
+        margin-top: 42px !important;
+        border-radius: 38px !important;
+        overflow: hidden !important;
+        display: block !important;
+    }
+
+    .team-orbit::before,
+    .team-orbit::after {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .team-core {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 4 !important;
+        text-align: center !important;
+    }
+
+    .team-core small {
+        letter-spacing: .11em !important;
+    }
+
+    .team-core h3 {
+        margin-top: 13px !important;
+        line-height: .88 !important;
+        letter-spacing: -.05em !important;
+    }
+
+    .team-core p {
+        margin-top: 13px !important;
+        line-height: 1.32 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        position: absolute !important;
+        padding: 8px !important;
+        border-radius: 30px !important;
+        transform: none !important;
+        z-index: 5 !important;
+        overflow: visible !important;
+    }
+
+    .team-avatar img {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 23px !important;
+        object-fit: cover !important;
+    }
+
+    .team-tooltip {
+        position: absolute !important;
+        left: 50% !important;
+        top: calc(100% + 14px) !important;
+        bottom: auto !important;
+        transform: translateX(-50%) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: max-content !important;
+        border-radius: 999px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        pointer-events: none !important;
+    }
+
+    .team-tooltip span {
+        display: none !important;
+    }
+
+    .team-avatar:hover,
+    .team-avatar:active,
+    .team-avatar:focus {
+        transform: none !important;
+    }
+
+    .team-avatar:hover img,
+    .team-avatar:active img,
+    .team-avatar:focus img {
+        transform: scale(1.02) !important;
+    }
+}
+
+
+/* Samsung Galaxy S8 / width around 360px */
+@media (max-width: 374px) {
+    .team-orbit {
+        min-height: 710px !important;
+        border-radius: 34px !important;
+    }
+
+    .team-orbit::before {
+        width: 300px !important;
+        height: 160px !important;
+    }
+
+    .team-orbit::after {
+        width: 390px !important;
+        height: 220px !important;
+    }
+
+    .team-core {
+        width: 128px !important;
+        min-height: 188px !important;
+        padding: 16px 10px !important;
+        border-radius: 28px !important;
+    }
+
+    .team-core small {
+        font-size: 7px !important;
+    }
+
+    .team-core h3 {
+        font-size: 24px !important;
+    }
+
+    .team-core p {
+        font-size: 7.8px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 98px !important;
+        height: 98px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 4.5% !important;
+        top: 8% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 4.5% !important;
+        top: 8% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 4.5% !important;
+        bottom: 11.5% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 4.5% !important;
+        bottom: 11.5% !important;
+    }
+
+    .team-tooltip {
+        min-width: 112px !important;
+        max-width: 124px !important;
+        padding: 8px 9px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 9.5px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* iPhone SE / width 375px */
+@media (min-width: 375px) and (max-width: 389px) {
+    .team-orbit {
+        min-height: 720px !important;
+        border-radius: 35px !important;
+    }
+
+    .team-orbit::before {
+        width: 310px !important;
+        height: 165px !important;
+    }
+
+    .team-orbit::after {
+        width: 405px !important;
+        height: 230px !important;
+    }
+
+    .team-core {
+        width: 132px !important;
+        min-height: 190px !important;
+        padding: 16px 10px !important;
+        border-radius: 28px !important;
+    }
+
+    .team-core small {
+        font-size: 7px !important;
+    }
+
+    .team-core h3 {
+        font-size: 25px !important;
+    }
+
+    .team-core p {
+        font-size: 8px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 4.8% !important;
+        top: 8.5% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 4.8% !important;
+        top: 8.5% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 4.8% !important;
+        bottom: 12% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 4.8% !important;
+        bottom: 12% !important;
+    }
+
+    .team-tooltip {
+        min-width: 114px !important;
+        max-width: 126px !important;
+        padding: 8px 9px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 9.7px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* iPhone 12 Pro / width 390px */
+@media (min-width: 390px) and (max-width: 399px) {
+    .team-orbit {
+        min-height: 735px !important;
+        border-radius: 36px !important;
+    }
+
+    .team-orbit::before {
+        width: 325px !important;
+        height: 172px !important;
+    }
+
+    .team-orbit::after {
+        width: 430px !important;
+        height: 240px !important;
+    }
+
+    .team-core {
+        width: 142px !important;
+        min-height: 198px !important;
+        padding: 17px 11px !important;
+        border-radius: 29px !important;
+    }
+
+    .team-core small {
+        font-size: 7.4px !important;
+    }
+
+    .team-core h3 {
+        font-size: 26px !important;
+    }
+
+    .team-core p {
+        font-size: 8.3px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 106px !important;
+        height: 106px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 5% !important;
+        top: 8.8% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 5% !important;
+        top: 8.8% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 5% !important;
+        bottom: 12.8% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 5% !important;
+        bottom: 12.8% !important;
+    }
+
+    .team-tooltip {
+        min-width: 118px !important;
+        max-width: 132px !important;
+        padding: 8px 10px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 10px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* Pixel 7 / Samsung S20 Ultra / width 400px - 413px */
+@media (min-width: 400px) and (max-width: 413px) {
+    .team-orbit {
+        min-height: 745px !important;
+        border-radius: 37px !important;
+    }
+
+    .team-orbit::before {
+        width: 335px !important;
+        height: 178px !important;
+    }
+
+    .team-orbit::after {
+        width: 445px !important;
+        height: 248px !important;
+    }
+
+    .team-core {
+        width: 146px !important;
+        min-height: 202px !important;
+        padding: 18px 11px !important;
+        border-radius: 30px !important;
+    }
+
+    .team-core small {
+        font-size: 7.6px !important;
+    }
+
+    .team-core h3 {
+        font-size: 27px !important;
+    }
+
+    .team-core p {
+        font-size: 8.5px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 110px !important;
+        height: 110px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 5.5% !important;
+        top: 9% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 5.5% !important;
+        top: 9% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 5.5% !important;
+        bottom: 13.2% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 5.5% !important;
+        bottom: 13.2% !important;
+    }
+
+    .team-tooltip {
+        min-width: 120px !important;
+        max-width: 138px !important;
+        padding: 8px 10px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 10.2px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* iPhone XR / width 414px */
+@media (min-width: 414px) and (max-width: 429px) {
+    .team-orbit {
+        min-height: 755px !important;
+        border-radius: 38px !important;
+    }
+
+    .team-orbit::before {
+        width: 345px !important;
+        height: 182px !important;
+    }
+
+    .team-orbit::after {
+        width: 460px !important;
+        height: 255px !important;
+    }
+
+    .team-core {
+        width: 150px !important;
+        min-height: 205px !important;
+        padding: 18px 12px !important;
+        border-radius: 30px !important;
+    }
+
+    .team-core small {
+        font-size: 7.8px !important;
+    }
+
+    .team-core h3 {
+        font-size: 28px !important;
+    }
+
+    .team-core p {
+        font-size: 8.7px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 112px !important;
+        height: 112px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 5.8% !important;
+        top: 9.2% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 5.8% !important;
+        top: 9.2% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 5.8% !important;
+        bottom: 13.8% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 5.8% !important;
+        bottom: 13.8% !important;
+    }
+
+    .team-tooltip {
+        min-width: 122px !important;
+        max-width: 140px !important;
+        padding: 8px 10px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 10.4px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* iPhone 14 Pro Max and wider phones / width 430px - 640px */
+@media (min-width: 430px) and (max-width: 640px) {
+    .team-orbit {
+        min-height: 765px !important;
+        border-radius: 39px !important;
+    }
+
+    .team-orbit::before {
+        width: 360px !important;
+        height: 190px !important;
+    }
+
+    .team-orbit::after {
+        width: 475px !important;
+        height: 265px !important;
+    }
+
+    .team-core {
+        width: 154px !important;
+        min-height: 210px !important;
+        padding: 18px 12px !important;
+        border-radius: 31px !important;
+    }
+
+    .team-core small {
+        font-size: 8px !important;
+    }
+
+    .team-core h3 {
+        font-size: 29px !important;
+    }
+
+    .team-core p {
+        font-size: 9px !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 116px !important;
+        height: 116px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 6% !important;
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 6% !important;
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 6% !important;
+        bottom: 14% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 6% !important;
+        bottom: 14% !important;
+    }
+
+    .team-tooltip {
+        min-width: 126px !important;
+        max-width: 146px !important;
+        padding: 8px 10px !important;
+        top: calc(100% + 14px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 10.6px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+/* Make purple team core wider on phones */
+@media (max-width: 374px) {
+    .team-core {
+        width: 150px !important;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 389px) {
+    .team-core {
+        width: 155px !important;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 399px) {
+    .team-core {
+        width: 165px !important;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 413px) {
+    .team-core {
+        width: 170px !important;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 429px) {
+    .team-core {
+        width: 174px !important;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 640px) {
+    .team-core {
+        width: 182px !important;
+    }
+}
+
+/* =========================================================
+   TEAM SPACING TWEAK
+   Bring avatars slightly closer to the purple core
+========================================================= */
+
+/* Samsung Galaxy S8 / small phones */
+@media (max-width: 374px) {
+    .team-avatar.t1 {
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 13% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 13% !important;
+    }
+}
+
+/* iPhone SE */
+@media (min-width: 375px) and (max-width: 389px) {
+    .team-avatar.t1 {
+        top: 10% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 10% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 13.4% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 13.4% !important;
+    }
+}
+
+/* iPhone 12 Pro */
+@media (min-width: 390px) and (max-width: 399px) {
+    .team-avatar.t1 {
+        top: 10.2% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 10.2% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 14% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 14% !important;
+    }
+}
+
+/* Pixel 7 / Samsung S20 Ultra */
+@media (min-width: 400px) and (max-width: 413px) {
+    .team-avatar.t1 {
+        top: 10.4% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 10.4% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 14.4% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 14.4% !important;
+    }
+}
+
+/* iPhone XR */
+@media (min-width: 414px) and (max-width: 429px) {
+    .team-avatar.t1 {
+        top: 10.6% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 10.6% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 14.8% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 14.8% !important;
+    }
+}
+
+/* iPhone 14 Pro Max and wider phones */
+@media (min-width: 430px) and (max-width: 640px) {
+    .team-avatar.t1 {
+        top: 10.8% !important;
+    }
+
+    .team-avatar.t2 {
+        top: 10.8% !important;
+    }
+
+    .team-avatar.t3 {
+        bottom: 15% !important;
+    }
+
+    .team-avatar.t4 {
+        bottom: 15% !important;
+    }
+}
+
+
+/* =========================================================
+   TEAM TABLET / IPAD EXACT BREAKPOINTS
+   Add this at the very end of app.css
+========================================================= */
+
+
+
+
+
+/* Shared portrait tablet reset */
+@media (min-width: 641px) and (max-width: 1100px) and (orientation: portrait) {
+    .team-orbit {
+        position: relative !important;
+        display: block !important;
+        overflow: hidden !important;
+    }
+
+    .team-core {
+        position: absolute !important;
+        left: 50% !important;
+        top: 52% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 4 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        position: absolute !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        z-index: 5 !important;
+        overflow: visible !important;
+    }
+
+    .team-tooltip {
+        position: absolute !important;
+        left: 50% !important;
+        top: calc(100% + 12px) !important;
+        bottom: auto !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        white-space: normal !important;
+        text-align: center !important;
+        border-radius: 999px !important;
+        pointer-events: none !important;
+    }
+
+    .team-tooltip span {
+        display: none !important;
+    }
+
+    .team-avatar:hover,
+    .team-avatar:active,
+    .team-avatar:focus {
+        transform: none !important;
+    }
+
+    .team-avatar:hover img,
+    .team-avatar:active img,
+    .team-avatar:focus img {
+        transform: scale(1.02) !important;
+    }
+}
+
+
+/* =========================================================
+   Galaxy Z Fold 5
+   Width: 344px
+========================================================= */
+@media (max-width: 359px) {
+    .team-orbit {
+        min-height: 700px !important;
+        border-radius: 34px !important;
+    }
+
+    .team-orbit::before {
+        width: 285px !important;
+        height: 155px !important;
+    }
+
+    .team-orbit::after {
+        width: 370px !important;
+        height: 215px !important;
+    }
+
+    .team-core {
+        width: 145px !important;
+        min-height: 188px !important;
+        padding: 16px 10px !important;
+        border-radius: 28px !important;
+    }
+
+    .team-core small {
+        font-size: 7px !important;
+    }
+
+    .team-core h3 {
+        font-size: 24px !important;
+        line-height: .88 !important;
+    }
+
+    .team-core p {
+        font-size: 7.8px !important;
+        line-height: 1.32 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 94px !important;
+        height: 94px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 3.8% !important;
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 3.8% !important;
+        top: 9.5% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 3.8% !important;
+        bottom: 13.2% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 3.8% !important;
+        bottom: 13.2% !important;
+    }
+
+    .team-tooltip {
+        min-width: 108px !important;
+        max-width: 118px !important;
+        padding: 7px 8px !important;
+        top: calc(100% + 13px) !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 9px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* =========================================================
+   iPad Mini Portrait
+   768 x 1024
+========================================================= */
+@media (min-width: 741px) and (max-width: 789px) and (orientation: portrait) {
+    .team-orbit {
+        min-height: 650px !important;
+        border-radius: 44px !important;
+    }
+
+    .team-core {
+        width: 285px !important;
+        min-height: 245px !important;
+        padding: 30px 26px !important;
+        border-radius: 42px !important;
+    }
+
+    .team-core small {
+        font-size: 12px !important;
+    }
+
+    .team-core h3 {
+        font-size: 44px !important;
+        line-height: .9 !important;
+    }
+
+    .team-core p {
+        font-size: 14.5px !important;
+        line-height: 1.45 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 136px !important;
+        height: 136px !important;
+    }
+
+    .team-avatar.t1 {
+        left: calc(50% - 300px) !important;
+        top: 15% !important;
+    }
+
+    .team-avatar.t2 {
+        left: calc(50% + 165px) !important;
+        top: 15% !important;
+    }
+
+    .team-avatar.t3 {
+        left: calc(50% - 300px) !important;
+        top: 64% !important;
+    }
+
+    .team-avatar.t4 {
+        left: calc(50% + 165px) !important;
+        top: 64% !important;
+    }
+
+    .team-tooltip {
+        min-width: 130px !important;
+        max-width: 160px !important;
+        padding: 12px 18px !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 11px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* =========================================================
+   iPad Air Portrait
+   820 x 1180
+========================================================= */
+@media (min-width: 790px) and (max-width: 859px) and (orientation: portrait) {
+    .team-orbit {
+        min-height: 675px !important;
+        border-radius: 46px !important;
+    }
+
+    .team-core {
+        width: 300px !important;
+        min-height: 252px !important;
+        padding: 32px 28px !important;
+        border-radius: 44px !important;
+    }
+
+    .team-core small {
+        font-size: 12.5px !important;
+    }
+
+    .team-core h3 {
+        font-size: 46px !important;
+        line-height: .9 !important;
+    }
+
+    .team-core p {
+        font-size: 15px !important;
+        line-height: 1.45 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 142px !important;
+        height: 142px !important;
+    }
+
+    .team-avatar.t1 {
+        left: calc(50% - 320px) !important;
+        top: 15% !important;
+    }
+
+    .team-avatar.t2 {
+        left: calc(50% + 178px) !important;
+        top: 15% !important;
+    }
+
+    .team-avatar.t3 {
+        left: calc(50% - 300px) !important;
+        top: 64% !important;
+    }
+
+    .team-avatar.t4 {
+        left: calc(50% + 165px) !important;
+        top: 64% !important;
+    }
+
+    .team-tooltip {
+        min-width: 130px !important;
+        max-width: 155px !important;
+        padding: 9px 12px !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 11.5px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+/* =========================================================
+   Surface Pro Portrait
+   912 x 1368
+========================================================= */
+@media (min-width: 860px) and (max-width: 979px) and (orientation: portrait) {
+    .team-orbit {
+        min-height: 700px !important;
+        border-radius: 48px !important;
+    }
+
+    .team-core {
+        width: 315px !important;
+        min-height: 260px !important;
+        padding: 32px 30px !important;
+        border-radius: 45px !important;
+    }
+
+    .team-core small {
+        font-size: 13px !important;
+    }
+
+    .team-core h3 {
+        font-size: 48px !important;
+        line-height: .9 !important;
+    }
+
+    .team-core p {
+        font-size: 15.5px !important;
+        line-height: 1.45 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .team-avatar.t1 {
+        left: calc(50% - 350px) !important;
+        top: 15% !important;
+    }
+
+    .team-avatar.t2 {
+        left: calc(50% + 200px) !important;
+        top: 15% !important;
+    }
+
+  .team-avatar.t3 {
+        left: calc(50% - 300px) !important;
+        top: 64% !important;
+    }
+
+    .team-avatar.t4 {
+        left: calc(50% + 165px) !important;
+        top: 64% !important;
+    }
+
+    .team-tooltip {
+        min-width: 135px !important;
+        max-width: 165px !important;
+        padding: 10px 13px !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 12px !important;
+        line-height: 1.08 !important;
+    }
+}
+
+
+
+
+
+/* =========================================================
+   iPad Pro
+   1024px
+========================================================= */
+@media (min-width: 980px) and (max-width: 1100px) {
+    .team-orbit {
+        min-height: 710px !important;
+    }
+
+    .team-core {
+        width: 310px !important;
+        min-height: 260px !important;
+        padding: 32px 30px !important;
+    }
+
+    .team-core h3 {
+        font-size: 48px !important;
+    }
+
+    .team-core p {
+        font-size: 15.5px !important;
+        line-height: 1.45 !important;
+    }
+
+    .team-avatar,
+    .team-avatar.t1,
+    .team-avatar.t2,
+    .team-avatar.t3,
+    .team-avatar.t4 {
+        width: 154px !important;
+        height: 154px !important;
+    }
+
+    .team-avatar.t1 {
+        left: 11% !important;
+        top: 13.5% !important;
+    }
+
+    .team-avatar.t2 {
+        right: 11% !important;
+        top: 13.5% !important;
+    }
+
+    .team-avatar.t3 {
+        left: 14.5% !important;
+        bottom: 14.5% !important;
+    }
+
+    .team-avatar.t4 {
+        right: 14.5% !important;
+        bottom: 14.5% !important;
+    }
+
+    .team-tooltip {
+        min-width: 132px !important;
+        max-width: 160px !important;
+    }
+
+    .team-tooltip strong {
+        font-size: 12px !important;
+    }
+}
+
+
+/* Prevent hover/touch movement on all tablet sizes */
+@media (min-width: 641px) and (max-width: 1100px) {
+    .team-avatar:hover,
+    .team-avatar:active,
+    .team-avatar:focus {
+        transform: none !important;
+    }
+
+    .team-avatar:hover img,
+    .team-avatar:active img,
+    .team-avatar:focus img {
+        transform: scale(1.03) !important;
+    }
+}
+/* Welcome mobile build-card smooth reveal */
+@media (max-width: 640px) {
+    #uploadCard,
+    .upload-card {
+        will-change: transform, opacity, filter !important;
+        transition:
+            transform .08s linear,
+            opacity .08s linear,
+            filter .08s linear !important;
+        transform-origin: center top !important;
+    }
+}
+
+
+/* KIFAA MOBILE UPLOAD CARD RESET - no blur, no fixed, no scroll animation */
+@media (max-width: 640px) {
+    #uploadCard,
+    .upload-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        translate: none !important;
+        scale: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        will-change: auto !important;
+        transition: none !important;
+        animation: none !important;
+        margin: 34px auto 0 !important;
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+    }
+
+    #uploadCard *,
+    .upload-card * {
+        filter: none !important;
+    }
+}
+
+/* Welcome mobile build-card layout fix */
+@media (max-width: 640px) {
+    #welcome.kifaa-experience,
+    .kifaa-experience {
+        min-height: 100dvh !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .kifaa-stage {
+        min-height: 100dvh !important;
+        height: auto !important;
+        padding: 96px 20px 120px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+
+    #uploadCard,
+    .upload-card {
+        position: relative !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        margin: 0 auto !important;
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        z-index: 5 !important;
+    }
+
+    .about-section,
+    #about {
+        margin-top: 0 !important;
+        padding-top: 76px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .kifaa-stage {
+        padding: 82px 18px 100px !important;
+    }
+
+    #uploadCard,
+    .upload-card {
+        width: min(100%, 310px) !important;
+        max-width: 310px !important;
+    }
+}
+
+/* Welcome mobile: show upload card after twin heads disappear */
+@media (max-width: 640px) {
+    #uploadCard,
+    .upload-card {
+        opacity: 0 !important;
+        transform: translateY(34px) scale(.96) !important;
+        filter: none !important;
+        transition:
+            opacity .35s ease,
+            transform .35s ease !important;
+        pointer-events: none !important;
+        margin: 40px auto 96px !important;
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        position: relative !important;
+    }
+
+    #uploadCard.kifaa-upload-card-ready,
+    .upload-card.kifaa-upload-card-ready {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        pointer-events: auto !important;
     }
 }

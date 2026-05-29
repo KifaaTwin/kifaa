@@ -108,3 +108,36 @@ document.addEventListener('livewire:navigated', () => {
     document.documentElement.classList.remove('kifaa-mobile-open');
     initKifaaMobileNav();
 });
+
+window.matchMedia('(max-width: 640px)').matches;
+
+/* KIFAA mobile welcome card appears after twin heads disappear */
+function initKifaaMobileUploadCardAfterHeads() {
+    const card = document.querySelector('#uploadCard, .upload-card');
+    const twinEnergy = document.querySelector('#twinEnergy, .twins-layer');
+
+    if (!card || !twinEnergy) return;
+
+    const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
+
+    const update = () => {
+        if (!isMobile()) {
+            card.classList.remove('kifaa-upload-card-ready');
+            return;
+        }
+
+        const opacity = parseFloat(getComputedStyle(twinEnergy).opacity || '1');
+        const rect = twinEnergy.getBoundingClientRect();
+        const headsGone = opacity < 0.35 || rect.bottom < window.innerHeight * 0.55;
+
+        card.classList.toggle('kifaa-upload-card-ready', headsGone);
+    };
+
+    update();
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+}
+
+document.addEventListener('DOMContentLoaded', initKifaaMobileUploadCardAfterHeads);
+document.addEventListener('livewire:navigated', initKifaaMobileUploadCardAfterHeads);
