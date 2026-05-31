@@ -287,9 +287,10 @@
 
     function updateWelcome() {
         const rect = welcome.getBoundingClientRect();
-        const maxScroll = welcome.offsetHeight - window.innerHeight;
+        const maxScroll = Math.max(welcome.offsetHeight - window.innerHeight, 1);
         const progress = clamp(-rect.top / maxScroll, 0, 1);
         const openProgress = clamp(progress / 0.42, 0, 1);
+        const isCompact = window.innerWidth <= 1100;
 
         const startDistance = 72;
         const endDistance = 190;
@@ -309,17 +310,30 @@
             twinEnergy.style.transform = `translate(-50%, -50%) scale(${1 + openProgress * .08})`;
         }
 
-        const textOut = clamp((progress - 0.16) / 0.2, 0, 1);
+        const textOut = isCompact
+            ? clamp((openProgress - 0.18) / 0.24, 0, 1)
+            : clamp((progress - 0.16) / 0.2, 0, 1);
+
         heroText.style.opacity = 1 - textOut;
         heroText.style.transform = `translateY(${-60 * textOut}px)`;
 
-        const cardIn = clamp((progress - 0.34) / 0.16, 0, 1);
-        const cardOut = clamp((progress - 0.82) / 0.14, 0, 1);
+        const cardIn = isCompact
+            ? clamp((openProgress - 0.30) / 0.34, 0, 1)
+            : clamp((progress - 0.34) / 0.16, 0, 1);
+
+        const cardOut = isCompact
+            ? 0
+            : clamp((progress - 0.82) / 0.14, 0, 1);
+
         const cardOpacity = cardIn * (1 - cardOut);
 
-        uploadCard.style.opacity = cardOpacity;
-        uploadCard.style.transform =
-            `translateY(${50 - cardIn * 50 - cardOut * 45}px) scale(${0.94 + cardIn * 0.06 - cardOut * 0.02})`;
+        const cardTransform = isCompact
+            ? `translateY(${34 - cardIn * 34}px) scale(${0.96 + cardIn * 0.04})`
+            : `translateY(${50 - cardIn * 50 - cardOut * 45}px) scale(${0.94 + cardIn * 0.06 - cardOut * 0.02})`;
+
+        uploadCard.style.setProperty('opacity', cardOpacity, 'important');
+        uploadCard.style.setProperty('transform', cardTransform, 'important');
+        uploadCard.style.setProperty('pointer-events', cardOpacity > 0.25 ? 'auto' : 'none', 'important');
 
         ticking = false;
     }

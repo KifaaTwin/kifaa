@@ -8751,128 +8751,19 @@ html.dark .market-skill-inline-badge,
         transform: scale(1.03) !important;
     }
 }
-/* Welcome mobile build-card smooth reveal */
-@media (max-width: 640px) {
-    #uploadCard,
-    .upload-card {
-        will-change: transform, opacity, filter !important;
-        transition:
-            transform .08s linear,
-            opacity .08s linear,
-            filter .08s linear !important;
-        transform-origin: center top !important;
+
+@media (max-width: 1100px) {
+    #welcome {
+        min-height: 175dvh !important;
+        padding-bottom: 48px !important;
     }
-}
 
-
-/* KIFAA MOBILE UPLOAD CARD RESET - no blur, no fixed, no scroll animation */
-@media (max-width: 640px) {
     #uploadCard,
     .upload-card {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        translate: none !important;
-        scale: none !important;
-        opacity: 1 !important;
         filter: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        will-change: auto !important;
-        transition: none !important;
-        animation: none !important;
-        margin: 34px auto 0 !important;
-        width: min(100%, 330px) !important;
-        max-width: 330px !important;
-    }
-
-    #uploadCard *,
-    .upload-card * {
-        filter: none !important;
-    }
-}
-
-/* Welcome mobile build-card layout fix */
-@media (max-width: 640px) {
-    #welcome.kifaa-experience,
-    .kifaa-experience {
-        min-height: 100dvh !important;
-        height: auto !important;
-        overflow: visible !important;
-    }
-
-    .kifaa-stage {
-        min-height: 100dvh !important;
-        height: auto !important;
-        padding: 96px 20px 120px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        flex-direction: column !important;
-    }
-
-    #uploadCard,
-    .upload-card {
-        position: relative !important;
-        inset: auto !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        opacity: 1 !important;
-        filter: none !important;
-        margin: 0 auto !important;
-        width: min(100%, 330px) !important;
-        max-width: 330px !important;
-        z-index: 5 !important;
-    }
-
-    .about-section,
-    #about {
-        margin-top: 0 !important;
-        padding-top: 76px !important;
-    }
-}
-
-@media (max-width: 380px) {
-    .kifaa-stage {
-        padding: 82px 18px 100px !important;
-    }
-
-    #uploadCard,
-    .upload-card {
-        width: min(100%, 310px) !important;
-        max-width: 310px !important;
-    }
-}
-
-/* Welcome mobile: show upload card after twin heads disappear */
-@media (max-width: 640px) {
-    #uploadCard,
-    .upload-card {
-        opacity: 0 !important;
-        transform: translateY(34px) scale(.96) !important;
-        filter: none !important;
-        transition:
-            opacity .35s ease,
-            transform .35s ease !important;
-        pointer-events: none !important;
-        margin: 40px auto 96px !important;
-        width: min(100%, 330px) !important;
-        max-width: 330px !important;
-        position: relative !important;
-    }
-
-    #uploadCard.kifaa-upload-card-ready,
-    .upload-card.kifaa-upload-card-ready {
-        opacity: 1 !important;
-        transform: translateY(0) scale(1) !important;
-        pointer-events: auto !important;
+        -webkit-filter: none !important;
+        will-change: opacity, transform !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
