@@ -679,4 +679,4 @@ This project is licensed under the MIT License.
 
 ## Author
 
-Developed by Leen Hani as part of a graduation project.
+Developed by Leen Alhazmi, Alya Alharthi, Shahad Alqurashi, and Wajen Almatrafi as part of a graduation project.
