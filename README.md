@@ -677,6 +677,11 @@ This project is licensed under the MIT License.
 
 ---
 
-## Author
+## Contributors
 
-Developed by Leen Alhazmi, Alya Alharthi, Shahad Alqurashi, and Wajen Almatrafi as part of a graduation project.
+This project was developed as a graduation project by:
+
+- Leen Alhazmi
+- Alya Alharthi
+- Shahad Musallam Alqurashi
+- Wajen Naif Almatrafi
